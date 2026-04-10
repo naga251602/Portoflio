@@ -10,6 +10,7 @@ export default function ContactSection() {
   const { showToast } = useToast();
   const [sending, setSending] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const ACCESS_KEY = process.env.NEXT_PUBLIC_FORM_ACCESS_KEY
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ export default function ContactSection() {
       formData.append("name", form.name);
       formData.append("email", form.email);
       formData.append("message", form.message);
-      formData.append("access_key", "4052b6f0-8f89-4c08-abdc-c476148d70e6");
+      formData.append("access_key", ACCESS_KEY ?? "");
       const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
       const data = await res.json();
       showToast(res.ok ? "Success! Your message has been sent." : "Error: " + data.message);
