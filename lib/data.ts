@@ -48,7 +48,22 @@ export const detailsData: DetailsData = {
       linkIcon: "github",
       visual: "PostgreSQL Database<br/>↓<br/>Flask API & Columnar Engine<br/>↓<br/>React Dashboard",
       screenshots: ["/demo_aistora.gif"],
+
     },
+    pricewatch: {
+    title: "PriceWatch | Automated Price Drop Tracker with Email Alerts",
+    subtitle: "Project",
+    featured: false,
+    isNew: true,
+    description:
+      "<p>Built a full-stack price tracking web app where users paste any product URL, set a target price, and receive an automated email alert the moment the price drops to their target.</p><br/><p>Implemented a Cheerio-based scraping engine that parses live prices from product pages across major retailers, with a cron-driven automation layer that checks all tracked products on a schedule and fires transactional emails via Nodemailer SMTP.</p><br/><p>Secured the platform with Supabase Auth (email/password + Google OAuth) and Row Level Security policies ensuring users only access their own data. Built an unsubscribe token system allowing one-click opt-out from email alerts without requiring login.</p>",
+    stack: ["Next.js", "Supabase", "PostgreSQL", "Cheerio", "Nodemailer", "Tailwind CSS"],
+    link: "https://github.com/naga251602/pricewatch",
+    linkText: "Repository",
+    linkIcon: "github",
+    visual: "Product URL + Target Price<br/>↓<br/>Cheerio Scraper + Cron<br/>↓<br/>Email Alert + Unsubscribe",
+    screenshots: ["/demo_pricewatch.gif"],
+  },
     ipl_predictor: {
       title: "Deep Neural Net IPL Predictor | Multi-Modal Win Forecasting",
       subtitle: "Project",
