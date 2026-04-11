@@ -44,7 +44,7 @@ export default function ContactSection() {
               Whether you&apos;re looking to build scalable infrastructure, real-time data pipelines, or just want to chat about backend systems, my inbox is always open.
             </p>
             <div className="flex flex-col gap-4">
-              <a href="mailto:gnagalap@usc.edu"
+              <a href="mailto:nagalapu@usc.edu"
                 className="interactive cursor-none inline-flex items-center gap-3 text-[var(--fg)] font-mono text-sm group w-fit">
                 <span className="p-2 border border-[var(--border)] rounded-md group-hover:bg-[var(--fg)] group-hover:text-[var(--bg)] transition-colors">
                   <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 pointer-events-none" />
