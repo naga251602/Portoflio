@@ -21,6 +21,7 @@ export type DetailItem = {
   stack: string[];
   link?: string;
   linkText?: string;
+  deployedLink?: string; 
   linkIcon?: string;
   visual?: string;
   screenshots?: string[];
@@ -62,6 +63,7 @@ export const detailsData: DetailsData = {
     linkText: "Repository",
     linkIcon: "github",
     visual: "Product URL + Target Price<br/>↓<br/>Cheerio Scraper + Cron<br/>↓<br/>Email Alert + Unsubscribe",
+    deployedLink:"https://pricewatch-eight-rosy.vercel.app/",
     screenshots: ["/demo_pricewatch.gif"],
   },
     ipl_predictor: {

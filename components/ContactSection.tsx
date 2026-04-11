@@ -106,12 +106,7 @@ export default function ContactSection() {
 
       <footer className="pt-16 pb-8 border-t border-[var(--border)] mt-8 text-center fade-up">
         <p className="text-xs font-mono text-[var(--muted)] flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1">
-          <span>&copy; 2025 Gaurav Nagalapuram.</span>
-          <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-            Crafted with
-            <FontAwesomeIcon icon={faHeart} className="w-3.5 h-3.5 text-red-500 animate-pulse inline" />
-            in Los Angeles
-          </span>
+          <span>&copy; 2026 Gaurav Nagalapuram Venkataramanan</span>
         </p>
       </footer>
     </>

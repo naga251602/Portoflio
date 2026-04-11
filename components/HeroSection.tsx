@@ -26,17 +26,15 @@ export default function HeroSection() {
       </div>
 
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
-        Software Engineer &amp; <br />AI/ML Systems Builder.
+        Full Stack &amp; <br />Data Engineer.
       </h1>
 
       <p className="text-sm md:text-base text-[var(--muted)] mt-4 mb-8 leading-relaxed">
-        Full Stack &nbsp;·&nbsp; Machine Learning &nbsp;·&nbsp; Distributed Computing &nbsp;·&nbsp; Databases
+        JavaScript & TypeScript &nbsp;·&nbsp;Python &nbsp;·&nbsp; Go &nbsp;·&nbsp; C++ &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp; Distributed Systems &nbsp;·&nbsp; Databases
       </p>
 
       <div className="text-base md:text-lg text-[var(--muted)] max-w-2xl leading-relaxed mb-8">
-        MS Applied Data Science candidate at USC with 2+ years of backend and full-stack engineering experience.
-        Specializing in high-performance API design, concurrent systems in Go and Python, real-time data pipelines,
-        and ML-integrated applications.
+       MS Applied Data Science @ USC. Full stack and data engineer with 2+ years building high-performance APIs, data pipelines, and distributed systems in Go, Python, and C++.
       </div>
 
       <div className="flex flex-col gap-6">
@@ -60,7 +58,7 @@ export default function HeroSection() {
               aria-label="LinkedIn">
               <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4 pointer-events-none" />
             </a>
-            <a href="mailto:gnagalap@usc.edu"
+            <a href="mailto:nagalapu@usc.edu"
               className="interactive cursor-none magnetic p-2.5 border border-[var(--border)] rounded-md hover:bg-[var(--fg)] hover:text-[var(--bg)] transition-colors text-[var(--fg)]"
               aria-label="Email">
               <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 pointer-events-none" />

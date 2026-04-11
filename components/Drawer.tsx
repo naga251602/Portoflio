@@ -212,16 +212,28 @@ function DetailsPane({
         )}
 
         {/* CTA */}
-        {d.link && (
+        {(d.link || d.deployedLink) && (
           <div className={`flex flex-wrap gap-3 mb-6 transition-opacity duration-200 ${headerActionsVisible ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-            <a
-              href={d.link}
-              target="_blank"
-              className="interactive cursor-none inline-flex items-center gap-2 px-4 py-2 bg-[var(--fg)] text-[var(--bg)] hover:opacity-85 transition-opacity font-medium text-sm rounded-lg shadow-sm"
-            >
-              <FontAwesomeIcon icon={d.linkIcon === "github" ? faGithub : faUpRightFromSquare} className="w-4 h-4" />
-              {d.linkText}
-            </a>
+            {d.link && (
+              <a
+                href={d.link}
+                target="_blank"
+                className="interactive cursor-none inline-flex items-center gap-2 px-4 py-2 bg-[var(--fg)] text-[var(--bg)] hover:opacity-85 transition-opacity font-medium text-sm rounded-lg shadow-sm"
+              >
+                <FontAwesomeIcon icon={d.linkIcon === "github" ? faGithub : faUpRightFromSquare} className="w-4 h-4" />
+                {d.linkText}
+              </a>
+            )}
+            {d.deployedLink && (
+              <a
+                href={d.deployedLink}
+                target="_blank"
+                className="interactive cursor-none inline-flex items-center gap-2 px-4 py-2 border border-[var(--border)] text-[var(--fg)] hover:bg-[var(--hover-bg)] transition-colors font-medium text-sm rounded-lg"
+              >
+                <FontAwesomeIcon icon={faUpRightFromSquare} className="w-4 h-4" />
+                Live Demo
+              </a>
+            )}
           </div>
         )}
 
