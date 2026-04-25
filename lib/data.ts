@@ -513,7 +513,6 @@ export const detailsData: DetailsData = {
 };
 
 export const statsData = [
-  { value: "2+", label: "Years Experience" },
   {
     value: `${Object.keys(detailsData.project).length}`,
     label: "Projects Built",
