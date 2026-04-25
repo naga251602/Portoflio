@@ -30,13 +30,13 @@ export default function HeroSection() {
       </div>
 
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
-        Software Engineer &amp; <br /> Full Stack & Backend
+        Software Engineer | Full Stack & Backend
       </h1>
 
       <p className="text-sm md:text-base text-[var(--muted)] mt-4 mb-8 leading-relaxed">
-        JavaScript & TypeScript &nbsp;·&nbsp;Python &nbsp;·&nbsp; Go
-        &nbsp;·&nbsp; React JS &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp;
-        Distributed Systems &nbsp;·&nbsp; Databases
+        Python &nbsp;·&nbsp; Go &nbsp;·&nbsp; React &nbsp;·&nbsp; JavaScript &
+        TypeScript &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp; Backend Systems
+        &nbsp;·&nbsp; Databases
       </p>
 
       <div className="text-base md:text-lg text-[var(--muted)] max-w-2xl leading-relaxed mb-8">
