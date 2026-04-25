@@ -42,14 +42,15 @@ export const detailsData: DetailsData = {
       featured: true,
       isNew: false,
       description:
-        "<p>Architected an in-memory columnar query engine in Python processing 100K+ row datasets with sub-second filtering, grouping, and aggregation outperforming naive pandas by 3x on benchmarks.</p><br/><p>Exposed functionality via Flask REST APIs with JWT auth and RBAC, supporting secure multi-tenant querying with per-user schema isolation backed by PostgreSQL. Containerized all microservices with Docker Compose and automated CI/CD via GitHub Actions, maintaining 85% test coverage.</p><br/><p>Built a React dashboard with real-time chart rendering using Recharts, enabling non-technical users to query and visualize large datasets without SQL knowledge.</p>",
+        "<p>Outperformed Pandas <strong>3×</strong> on sort, group-by, and join operations across 100K+ row datasets by architecting an in-memory columnar query engine in Python using Apache Arrow, delivering sub-second filtering and aggregation.</p><br/><p>Shipped a production-grade Flask REST API with JWT auth and RBAC for secure multi-tenant querying, backed by PostgreSQL with per-user schema isolation. Containerized via Docker Compose with <strong>85% test coverage</strong> and automated CI/CD via GitHub Actions.</p><br/><p>Built a React dashboard with Recharts enabling non-technical users to query and visualize large datasets without writing SQL — closing the loop from raw data to insight in under 3 clicks.</p>",
       stack: [
         "Python",
         "Flask",
         "PostgreSQL",
+        "Apache Arrow",
         "Docker",
         "GitHub Actions",
-        "Tailwind CSS",
+        "React",
         "JWT",
       ],
       link: "https://github.com/naga251602/aistora",
@@ -59,20 +60,51 @@ export const detailsData: DetailsData = {
         "PostgreSQL Database<br/>↓<br/>Flask API & Columnar Engine<br/>↓<br/>React Dashboard",
       screenshots: ["/demo_aistora.gif"],
     },
-    orilix: {
-      title: "Orilix | AI-Powered Dental Patient Management",
+    graphql: {
+      title: "GraphQL Task Management API",
       subtitle: "Project",
-      featured: false,
+      featured: true,
       isNew: false,
       description:
-        "<p>Built a full-stack patient management platform for dental clinics, featuring a unique per-patient sharable onboarding questionnaire link that auto-populates the day's visitor list on submission — cutting intake time by ~70% across 3 clinic workflows.</p><br/><p>Engineered AI-generated SOAP note summarization combined with voice notes, reducing manual charting time by 60% and eliminating an average of 15 min of documentation per appointment.</p><br/><p>Implemented an interactive 3D dental model using Three.js for in-app note-taking directly on tooth surfaces, with Firebase as the real-time backend for patient data and authentication.</p>",
-      stack: ["Flask", "Firebase", "Three.js", "Python", "JavaScript"],
-      link: "https://github.com/naga251602/orilix",
+        "<p>Held <strong>sub-100ms p99 latency at 1,000+ concurrent WebSocket connections</strong> by designing a schema-first GraphQL API with FastAPI and Strawberry, integrating Redis DataLoader batching to eliminate N+1 query overhead.</p><br/><p>Reduced average payload size <strong>60%</strong> on deeply nested task/subtask queries versus equivalent REST endpoints, with OAuth 2.0 PKCE flow handling auth across the full connection lifecycle.</p>",
+      stack: [
+        "FastAPI",
+        "GraphQL",
+        "Strawberry",
+        "Redis",
+        "Python",
+        "OAuth 2.0",
+        "WebSockets",
+      ],
+      link: "https://github.com/naga251602/todo-graphql",
       linkText: "Repository",
       linkIcon: "github",
       visual:
-        "Firebase Auth & DB<br/>↓<br/>Flask API + AI Summarization<br/>↓<br/>Three.js 3D Dental Model",
+        "FastAPI + Strawberry GraphQL<br/>↓<br/>Redis DataLoader Batching<br/>↓<br/>1K+ Concurrent WebSockets",
       screenshots: [],
+    },
+    ipl_predictor: {
+      title: "Deep Neural Net IPL Predictor | Multi-Modal Win Forecasting",
+      subtitle: "Project",
+      featured: false,
+      isNew: true,
+      description:
+        "<p>Achieved <strong>80% test accuracy</strong> on 2025 IPL match outcomes by building a multi-modal deep learning framework integrating performance data from 13 cricket leagues across 235 players, with league-quality weighting and recency decay.</p><br/><p>Designed a Dynamic OVR rating system (55–97 scale) feeding a 4-source weighted attention transformer with learnable fusion weights, capturing phase-specific batting (Top Order, Middle, Finisher) and bowling (Powerplay, Middle, Death) performance.</p><br/><p>Boosted reliability to a <strong>Brier score of 0.24</strong> by combining a 2-layer Graph Attention Network modeling batter-bowler matchup asymmetries with a 10,000-iteration Monte Carlo simulation engine, deployed as a Flask API with SHAP explainability at sub-2s latency.</p>",
+      stack: [
+        "Python",
+        "PyTorch",
+        "Flask",
+        "Graph Attention Networks",
+        "Monte Carlo Simulation",
+        "React",
+        "SHAP",
+      ],
+      link: "https://github.com/Nikhilr-28/Deep-Neural-Network-IPL-Prediction",
+      linkText: "Repository",
+      linkIcon: "github",
+      visual:
+        "13-League Data Pipeline<br/>↓<br/>Dynamic OVR Ratings<br/>↓<br/>GAT + Monte Carlo Engine",
+      screenshots: ["/demo_ipl.png", "/demo_ipl.png"],
     },
     pricewatch: {
       title: "PriceWatch | Automated Price Drop Tracker with Email Alerts",
@@ -80,7 +112,7 @@ export const detailsData: DetailsData = {
       featured: false,
       isNew: true,
       description:
-        "<p>Built a full-stack price tracking web app where users paste any product URL, set a target price, and receive an automated email alert the moment the price drops to their target.</p><br/><p>Implemented a Cheerio-based scraping engine that parses live prices from product pages across major retailers, with a cron-driven automation layer that checks all tracked products on a schedule and fires transactional emails via Nodemailer SMTP.</p><br/><p>Secured the platform with Supabase Auth (email/password + Google OAuth) and Row Level Security policies ensuring users only access their own data. Built an unsubscribe token system allowing one-click opt-out from email alerts without requiring login.</p>",
+        "<p>Cut user response time to deals from hours to <strong>under 60 seconds</strong> by building a Cheerio-based scraping pipeline that parses live product prices and fires instant transactional emails via Nodemailer the moment a target price hits.</p><br/><p>Reduced redundant scrape requests <strong>~40%</strong> across 200+ tracked products by implementing cross-user URL deduplication on hourly cron checks, lowering infrastructure cost without sacrificing freshness.</p><br/><p>Secured the platform with Supabase Auth (email/password + Google OAuth) and Row Level Security policies, plus a token-based one-click unsubscribe flow requiring no login.</p>",
       stack: [
         "Next.js",
         "Supabase",
@@ -97,47 +129,19 @@ export const detailsData: DetailsData = {
       deployedLink: "https://pricewatch-eight-rosy.vercel.app/",
       screenshots: ["/demo_pricewatch.gif"],
     },
-    ipl_predictor: {
-      title: "Deep Neural Net IPL Predictor | Multi-Modal Win Forecasting",
-      subtitle: "Project",
-      featured: false,
-      isNew: true,
-      description:
-        "<p>Built a multi-modal deep learning framework for IPL match outcome prediction achieving 80% test accuracy on 2025 IPL matches, integrating performance data from 13 cricket competitions across 235 players using league-quality weighting and recency decay.</p><br/><p>Designed a Dynamic OVR rating system (55-97 scale) with phase-specific scores for batting positions (Top Order, Middle, Finisher) and bowling phases (Powerplay, Middle, Death), feeding a 4-source weighted attention transformer with learnable fusion weights.</p><br/><p>Enhanced predictions with a 2-layer Graph Attention Network modeling batter-bowler confrontation asymmetries, combined with a 10,000-iteration Monte Carlo simulation engine yielding a Brier score of 0.24. Deployed as a production Flask API with SHAP explainability and sub-2-second latency.</p>",
-      stack: [
-        "Python",
-        "PyTorch",
-        "Flask",
-        "Graph Attention Networks",
-        "Monte Carlo Simulation",
-        "React",
-      ],
-      link: "https://github.com/Nikhilr-28/Deep-Neural-Network-IPL-Prediction",
-      linkText: "Repository",
-      linkIcon: "github",
-      visual:
-        "13-League Data Pipeline<br/>↓<br/>Dynamic OVR Ratings<br/>↓<br/>GAT + Monte Carlo Engine",
-      screenshots: ["/demo_ipl.png", "/demo_ipl.png"],
-    },
-    graphql: {
-      title: "GraphQL Task Management API",
+    orilix: {
+      title: "Orilix | AI-Powered Dental Patient Management",
       subtitle: "Project",
       featured: false,
       isNew: false,
       description:
-        "<p>Designed a schema-first GraphQL API using FastAPI and Strawberry, eliminating REST over-fetching and reducing average payload size by 60% on deeply nested task/subtask queries.</p><br/><p>Integrated Redis DataLoader batching and OAuth 2.0 PKCE flow supporting 1000+ concurrent WebSocket connections at sub-100ms p99 latency under load testing.</p>",
-      stack: [
-        "FastAPI",
-        "GraphQL",
-        "Redis",
-        "Python",
-        "OAuth 2.0",
-        "WebSockets",
-      ],
-      link: "https://github.com/naga251602/todo-graphql",
+        "<p>Cut patient intake time <strong>~70%</strong> across 3 clinic workflows by building unique per-patient sharable onboarding questionnaire links that auto-populate the day's visitor list on submission.</p><br/><p>Reduced manual charting time <strong>60%</strong> (~15 min per appointment) by combining voice notes with AI-generated SOAP note summarization, eliminating documentation friction for clinicians.</p><br/><p>Engineered an interactive 3D dental model in Three.js for in-app note-taking directly on tooth surfaces, with Firebase as the real-time backend for patient data and authentication.</p>",
+      stack: ["Flask", "Firebase", "Three.js", "Python", "JavaScript"],
+      link: "https://github.com/naga251602/orilix",
       linkText: "Repository",
       linkIcon: "github",
-      visual: "",
+      visual:
+        "Firebase Auth & DB<br/>↓<br/>Flask API + AI Summarization<br/>↓<br/>Three.js 3D Dental Model",
       screenshots: [],
     },
     gblog: {
@@ -146,13 +150,14 @@ export const detailsData: DetailsData = {
       featured: false,
       isNew: false,
       description:
-        "<p>Built a Next.js SSG platform with Incremental Static Regeneration and automatic image optimization, achieving 95+ Lighthouse score on mobile and desktop audits.</p><br/><p>Implemented a custom AVL tree search index over post metadata, improving tag/category lookup from O(n) to O(log n) with automatic rebalancing on content updates.</p>",
+        "<p>Achieved <strong>Lighthouse 95+ scores</strong> on mobile and desktop by combining Next.js SSG with Incremental Static Regeneration and on-demand revalidation via Supabase Webhooks, serving pages in under 200ms.</p><br/><p>Improved tag and category search from <strong>O(n) to O(log n)</strong> by implementing a self-balancing AVL tree index over post metadata, with automatic rebalancing on every content update.</p>",
       stack: [
         "Next.js",
         "React",
-        "Data Structures",
         "TypeScript",
         "Tailwind CSS",
+        "Supabase",
+        "Data Structures",
       ],
       link: "https://github.com/naga251602/gblog",
       linkText: "Repository",
@@ -189,7 +194,7 @@ export const detailsData: DetailsData = {
       featured: false,
       isNew: false,
       description:
-        "<p>Built a universal any-to-any database migration CLI tool supporting PostgreSQL, MySQL, SQLite, SQL Server, MariaDB, and OracleDB — enabling seamless schema and data transfer across heterogeneous database systems with a single command.</p><br/><p>Leveraged SQLAlchemy's cross-database abstraction layer to extract source schema (tables, columns, views), recreate it on the target, and transfer data faithfully — handling dialect differences transparently under the hood.</p><br/><p>Packaged as an installable Python CLI via pip, keeping the interface minimal: just source and target connection URLs. Includes a pytest test suite and is open for community contributions under the MIT License.</p>",
+        "<p>Built a universal any-to-any database migration CLI tool supporting <strong>6 SQL dialects</strong> (PostgreSQL, MySQL, SQLite, SQL Server, MariaDB, OracleDB), enabling cross-database schema and data transfer through a single command.</p><br/><p>Leveraged SQLAlchemy's cross-dialect abstraction layer to extract source schema (tables, columns, views), recreate it on the target, and faithfully transfer data — handling dialect differences transparently under the hood.</p><br/><p>Packaged as a pip-installable Python CLI with a minimal interface (just source and target connection URLs), pytest test suite, and open for community contributions under the MIT License.</p>",
       stack: [
         "Python",
         "SQLAlchemy",
@@ -212,7 +217,7 @@ export const detailsData: DetailsData = {
       featured: false,
       isNew: false,
       description:
-        "<p>Built a real-time messaging application with Next.js App Router and Firebase, featuring Google OAuth authentication, instant message delivery via Firestore, and live typing indicators — all with sub-second latency.</p><br/><p>Architected a modular component structure separating chat UI, auth context, and Firebase initialization layers, with full TypeScript type safety across shared interfaces and React Context-based auth state management.</p><br/><p>Designed a fully responsive, accessible UI with Tailwind CSS adhering to WCAG principles, optimized across mobile, tablet, and desktop — with ESLint enforcing consistent code quality throughout the codebase.</p>",
+        "<p>Delivered <strong>sub-second message latency</strong> by architecting a Next.js App Router app with Firestore real-time listeners, Google OAuth authentication, and live typing indicators.</p><br/><p>Built a modular component structure separating chat UI, auth context, and Firebase initialization layers, with full TypeScript type safety across shared interfaces and React Context-based auth state management.</p><br/><p>Designed a fully responsive, WCAG-compliant accessible UI with Tailwind CSS optimized across mobile, tablet, and desktop, enforced by ESLint for consistent code quality throughout the codebase.</p>",
       stack: [
         "Next.js",
         "React",
@@ -233,20 +238,22 @@ export const detailsData: DetailsData = {
 
   experience: {
     aadithya: {
-      title: "Freelance Full-Stack Developer",
+      title: "Software Engineer (Full Stack)",
       company: "Aadithya Cars",
       period: "Apr 2024 - Nov 2024",
       isCurrent: false,
       featured: false,
       subtitle: "Aadithya Cars • Apr 2024 - Nov 2024",
       description: `<ul class="list-disc pl-4 space-y-2">
-        <li>Reduced page load time <strong>75% (3.2s → 800ms)</strong> via lazy loading, code splitting, and Brotli compression, raising Lighthouse Performance score to 95+.</li>
-        <li>Replaced monolithic CSV ingestion with a chunk-based streaming pipeline, eliminating OOM crashes and achieving <strong>4× throughput</strong> on 500K+ row inventory datasets.</li>
-        <li>Integrated third-party valuation and financing APIs with exponential-backoff retry and circuit-breaker patterns, maintaining <strong>99.5% uptime</strong> and cutting time-to-interactive by 40%.</li>
+        <li>Cut initial page load <strong>75% (3.2s → 800ms)</strong> via lazy loading, code splitting, and Brotli compression, raising Lighthouse Performance score to <strong>95+</strong>.</li>
+        <li>Scaled data ingestion <strong>4×</strong> by replacing monolithic CSV ingestion with a chunk-based streaming pipeline, eliminating OOM crashes across 500K+ row inventory datasets.</li>
+        <li>Hit <strong>99.5% uptime</strong> by integrating third-party valuation and financing APIs with exponential-backoff retry and circuit-breaker patterns, cutting time-to-interactive by 40%.</li>
         <li>Improved SQL query performance <strong>35%</strong> via composite index design and query plan analysis on PostgreSQL tables with 1M+ records.</li>
       </ul>`,
       stack: [
         "React",
+        "TypeScript",
+        "Next.js",
         "Node.js",
         "PostgreSQL",
         "JavaScript",
@@ -264,20 +271,39 @@ export const detailsData: DetailsData = {
       featured: false,
       subtitle: "Virtusa • Dec 2023 - Apr 2024",
       description: `<ul class="list-disc pl-4 space-y-2">
-        <li>Led a team of 4 interns to deliver an <strong>EMart Inventory Management System</strong> (Spring Boot, Angular, MySQL) — real-time warehouse/shelf stock tracking, expiry alerting 2–3 days in advance, and maker-checker approval workflow, reducing manual stock discrepancy errors by ~40%.</li>
-        <li>Shipped <strong>3 backend modules</strong> (Public Employment Center, Tamil Nadu EB Bill System, barcode generation) with a CSV ingestion pipeline validating SHA-256 hashes and auto-generating signed PDF invoices emailed to vendors, cutting invoice processing time from ~2 days to same-day.</li>
+        <li>Cut manual stock discrepancy errors <strong>~40%</strong> as <strong>sole backend owner</strong> of the EMart Inventory Management System (Spring Boot, Angular, MySQL), coordinating 3 engineers and shipping real-time stock tracking, expiry alerting 2–3 days in advance, and a maker-checker approval workflow.</li>
+        <li>Reduced invoice processing from <strong>~2 days to same-day</strong> by building a SHA-256 validated CSV ingestion pipeline across 3 backend modules (Public Employment Center, Tamil Nadu EB Bill System, barcode generation), auto-generating signed PDF invoices emailed to vendors.</li>
       </ul>`,
       stack: [
         "Java",
-        "Java EE",
         "Spring Boot",
         "Spring Security",
         "Spring AOP",
-        "Spring Hibernate",
+        "Hibernate",
         "Angular",
         "MySQL",
-        "JDBC",
         "REST APIs",
+      ],
+      link: "",
+      linkText: "",
+      visual: "",
+    },
+    rmk_ra: {
+      title: "Research Assistant",
+      company: "R.M.K Engineering College",
+      period: "Sep 2023 - Apr 2024",
+      isCurrent: false,
+      subtitle: "R.M.K Engineering College • Sep 2023 - Apr 2024",
+      description: `<ul class="list-disc pl-4 space-y-2">
+        <li>Co-authored <strong>3 IEEE conference papers</strong> by implementing Python backend systems integrating sentiment analysis, text generation, and DenseNet medical image classification models — with one paper winning <strong>Best Paper, 3rd Place at ICCDS 2024</strong>.</li>
+        <li>Built data ingestion and preprocessing pipelines supporting 3 ML research projects under faculty supervision, contributing to experimental evaluation and manuscript preparation across <strong>7 total citations</strong>.</li>
+      </ul>`,
+      stack: [
+        "Python",
+        "PyTorch",
+        "Machine Learning",
+        "NLP",
+        "Computer Vision",
       ],
       link: "",
       linkText: "",
@@ -291,36 +317,19 @@ export const detailsData: DetailsData = {
       featured: false,
       subtitle: "Virtusa • Jul 2022 - Aug 2022",
       description: `<ul class="list-disc pl-4 space-y-2">
-        <li>Led a team of 3 interns to build and demo a full-stack <strong>e-commerce grocery application</strong> (Spring MVC, Angular 9+, MySQL) end-to-end in 6 weeks — covering product catalog, cart, checkout, and order management across 5 core user flows.</li>
-        <li>Designed <strong>8 RESTful API endpoints</strong> and a normalized MySQL schema with Spring Hibernate ORM; integrated Spring Security for auth, achieving &lt;3s page load under simulated 50-user load during final demo review.</li>
+        <li>Delivered a full-stack <strong>e-commerce grocery platform</strong> (Spring MVC, Angular 9+, MySQL) end-to-end in 6 weeks as team lead of 3, covering product catalog, cart, checkout, and order management across 5 core user flows.</li>
+        <li>Engineered <strong>8 REST endpoints</strong> with Hibernate ORM and Spring Security, holding <strong>sub-3s page load</strong> under simulated 50-user load during final demo review.</li>
       </ul>`,
       stack: [
         "Java",
         "Spring MVC",
         "Spring Security",
-        "Spring Hibernate",
+        "Hibernate",
         "Angular",
         "MySQL",
-        "JDBC",
         "REST APIs",
         "Bootstrap",
       ],
-      link: "",
-      linkText: "",
-      visual: "",
-    },
-    rmk_ra: {
-      title: "Research Assistant",
-      company: "R.M.K Engineering College",
-      period: "Sep 2023 - Apr 2024",
-      isCurrent: false,
-      subtitle: "R.M.K Engineering College • Sep 2023 - Apr 2024",
-      description: `<ul class="list-disc pl-4 space-y-2">
-        <li>Contributed to the development of ML-driven applications under faculty supervision, supporting data ingestion, preprocessing pipelines, and backend integration.</li>
-        <li>Implemented backend systems in Python integrating machine learning models for sentiment analysis, text generation, and medical image classification.</li>
-        <li>Assisted in experimental evaluation, result analysis, and manuscript preparation, contributing to <strong>3 accepted IEEE conference publications</strong> (7 total citations).</li>
-      </ul>`,
-      stack: ["Python", "Machine Learning", "NLP", "Computer Vision"],
       link: "",
       linkText: "",
       visual: "",
@@ -332,11 +341,11 @@ export const detailsData: DetailsData = {
       isCurrent: false,
       subtitle: "SAWBON • Feb 2022 - Mar 2022",
       description: `<ul class="list-disc pl-4 space-y-2">
-        <li>Built concurrent Go REST APIs using goroutines, channels, and connection pooling, sustaining <strong>sub-250ms p95 response times</strong> under 500 concurrent users with zero downtime.</li>
-        <li>Implemented Redis cache-aside with TTL-based invalidation, reducing DB read load by <strong>30%</strong> and cutting median API latency by <strong>15%</strong>.</li>
-        <li>Achieved <strong>78% code coverage</strong> on critical service paths via unit and integration tests using Go&apos;s testing package.</li>
+        <li>Sustained <strong>sub-250ms p95 response times</strong> at <strong>500 concurrent users</strong> with zero downtime by building concurrent Go REST APIs using goroutines, channels, and connection pooling against MongoDB.</li>
+        <li>Cut median API latency <strong>15%</strong> and reduced DB read load <strong>30%</strong> by implementing Redis cache-aside with TTL-based invalidation across server-rendered Remix.js components.</li>
+        <li>Achieved <strong>78% code coverage</strong> on critical service paths via unit and integration tests using Go's testing package.</li>
       </ul>`,
-      stack: ["Go", "Redis", "REST APIs", "Concurrency"],
+      stack: ["Go", "Redis", "MongoDB", "REST APIs", "Concurrency", "Remix.js"],
       link: "",
       linkText: "",
       visual: "",
@@ -347,12 +356,12 @@ export const detailsData: DetailsData = {
     human_ai: {
       title:
         "Human-AI Collaboration for Backend Text Generation: Dynamic Content Recommendation for Websites based on Keywords",
-      subtitle: "ICCDS 2024 | Citations: 4",
+      subtitle: "ICCDS 2024 | Best Paper, 3rd Place | Citations: 4",
       venue: "ICCDS 2024",
       featured: true,
       isNew: false,
       description:
-        "<p>Co-developed a keyword-driven content recommendation engine leveraging GPT-based AI pipelines to dynamically generate and personalize backend website copy, reducing manual authoring time by 60%.</p><br/><p>Evaluated system output quality against human-authored baselines through user studies with 40+ participants measuring coherence, relevance, and preference scores.</p>",
+        "<p><strong>🏆 Awarded Best Paper, 3rd Place</strong> at the 2024 International Conference on Computing and Data Science.</p><br/><p>Co-developed a keyword-driven content recommendation engine leveraging GPT-based AI pipelines to dynamically generate and personalize backend website copy, reducing manual authoring time by 60%.</p><br/><p>Evaluated system output quality against human-authored baselines through user studies with 40+ participants measuring coherence, relevance, and preference scores.</p>",
       stack: ["Python", "NLP", "GPT"],
       link: "https://ieeexplore.ieee.org/abstract/document/10560437",
       linkText: "Read Paper",
@@ -366,7 +375,7 @@ export const detailsData: DetailsData = {
       featured: false,
       isNew: false,
       description:
-        "<p>Co-developed an NLP pipeline using fine-tuned BERT on domain-specific patient review corpora to classify sentiment and generate ranked drug recommendations at 88% classification accuracy.</p><br/><p>Evaluated against TF-IDF and LSTM baselines, demonstrating a 12-point F1 improvement from transfer learning with biomedical pretraining.</p>",
+        "<p>Co-developed an NLP pipeline using fine-tuned BERT on domain-specific patient review corpora to classify sentiment and generate ranked drug recommendations at <strong>88% classification accuracy</strong>.</p><br/><p>Evaluated against TF-IDF and LSTM baselines, demonstrating a 12-point F1 improvement from transfer learning with biomedical pretraining.</p>",
       stack: ["Python", "NLP", "BERT"],
       link: "https://www.researchgate.net/profile/Shai-Kumar/publication/394529865",
       linkText: "Read Paper",
@@ -380,7 +389,7 @@ export const detailsData: DetailsData = {
       featured: false,
       isNew: true,
       description:
-        "<p>Co-trained DenseNet-121 on the CheXpert chest X-ray dataset with augmentation and class-weighting to handle label imbalance, achieving 92% precision-recall AUC on the held-out test set.</p><br/><p>Benchmarked against ResNet-50 and VGG-16; DenseNet outperformed by 6% AUC via dense skip connections enabling richer feature reuse across layers.</p>",
+        "<p>Co-trained DenseNet-121 on the CheXpert chest X-ray dataset with augmentation and class-weighting to handle label imbalance, achieving <strong>92% precision-recall AUC</strong> on the held-out test set.</p><br/><p>Benchmarked against ResNet-50 and VGG-16; DenseNet outperformed by 6% AUC via dense skip connections enabling richer feature reuse across layers.</p>",
       stack: ["Python", "Computer Vision", "PyTorch", "DenseNet"],
       link: "https://link.springer.com/chapter/10.1007/978-981-96-6124-4_8",
       linkText: "Read Paper",
@@ -400,6 +409,17 @@ export const detailsData: DetailsData = {
       link: "https://pypi.org/project/PrintStruct/",
       linkText: "PyPI Package",
       linkIcon: "package",
+    },
+    award_paper: {
+      title: "Best Paper Presentation — 3rd Place",
+      subtitle: "Achievement · ICCDS 2024",
+      isNew: false,
+      description:
+        "<p>Awarded at the 2024 International Conference on Computing and Data Science for the paper 'Human-AI Collaboration for Backend Text Generation: Dynamic Content Recommendation for Websites based on Keywords'.</p>",
+      stack: [],
+      link: "",
+      linkText: "",
+      linkIcon: "award",
     },
     imagine_cup: {
       title: "Microsoft Imagine Cup",
@@ -489,24 +509,13 @@ export const detailsData: DetailsData = {
       linkText: "View Credential",
       linkIcon: "code",
     },
-    award_paper: {
-      title: "Best Paper Presentation — 3rd Place",
-      subtitle: "Achievement",
-      isNew: false,
-      description:
-        "<p>Awarded at the 2024 International Conference on Computing and Data Science for the paper 'Human-AI Collaboration for Backend Text Generation'.</p>",
-      stack: [],
-      link: "",
-      linkText: "",
-      linkIcon: "award",
-    },
   },
 };
 
 export const statsData = [
   { value: "2+", label: "Years Experience" },
   {
-    value: `${Object.keys(detailsData.project).length - 1}+`,
+    value: `${Object.keys(detailsData.project).length}`,
     label: "Projects Built",
   },
   { value: "3", label: "Papers Published" },
@@ -516,14 +525,15 @@ export const skillsConfig: Record<string, SkillMeta[]> = {
   Languages: [
     { name: "Python", icon: "devicon-python-plain", level: 95 },
     { name: "Go", icon: "devicon-go-plain", level: 85 },
-    { name: "C++", icon: "devicon-cplusplus-plain", level: 80 },
-    { name: "C", icon: "devicon-c-plain", level: 75 },
+    { name: "TypeScript", icon: "devicon-typescript-plain", level: 90 },
     { name: "JavaScript", icon: "devicon-javascript-plain", level: 90 },
-    { name: "TypeScript", icon: "devicon-typescript-plain", level: 85 },
     { name: "SQL", icon: "devicon-sqldeveloper-plain", level: 90 },
+    { name: "Java", icon: "devicon-java-plain", level: 85 },
+    { name: "C++", icon: "devicon-cplusplus-plain", level: 75 },
   ],
   Backend: [
     { name: "FastAPI", icon: "devicon-fastapi-plain", level: 90 },
+    { name: "Spring Boot", icon: "devicon-spring-plain", level: 85 },
     { name: "Flask", icon: "devicon-flask-original", level: 85 },
     { name: "Node.js", icon: "devicon-nodejs-plain", level: 80 },
     { name: "GraphQL", icon: "devicon-graphql-plain", level: 85 },
@@ -533,12 +543,13 @@ export const skillsConfig: Record<string, SkillMeta[]> = {
   ],
   Frontend: [
     { name: "React", icon: "devicon-react-original", level: 90 },
-    { name: "Next.js", icon: "devicon-nextjs-plain", level: 85 },
+    { name: "Next.js", icon: "devicon-nextjs-plain", level: 90 },
     { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain", level: 90 },
     { name: "HTML/CSS", icon: "devicon-html5-plain", level: 95 },
   ],
   Databases: [
-    { name: "PostgreSQL", icon: "devicon-postgresql-plain", level: 85 },
+    { name: "PostgreSQL", icon: "devicon-postgresql-plain", level: 90 },
+    { name: "MySQL", icon: "devicon-mysql-plain", level: 85 },
     { name: "MongoDB", icon: "devicon-mongodb-plain", level: 80 },
     { name: "Redis", icon: "devicon-redis-plain", level: 85 },
     { name: "SQLite", icon: "devicon-sqlite-plain", level: 80 },
@@ -566,6 +577,12 @@ export const skillsConfig: Record<string, SkillMeta[]> = {
   Core: [
     { name: "System Design", icon: "fa-layer-group", isFa: true, level: 85 },
     { name: "Concurrency", icon: "fa-code-branch", isFa: true, level: 90 },
+    {
+      name: "Performance Optimization",
+      icon: "fa-gauge-high",
+      isFa: true,
+      level: 90,
+    },
     { name: "Data Structures", icon: "fa-database", isFa: true, level: 95 },
     { name: "Algorithms", icon: "fa-microchip", isFa: true, level: 95 },
   ],

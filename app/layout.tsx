@@ -5,9 +5,9 @@ import { ModalProvider } from "@/lib/ModalContext";
 import { ToastProvider } from "@/components/Toast";
 
 export const metadata: Metadata = {
-  title: "Gaurav N.V. | Backend & Data Engineering",
+  title: "Gaurav N.V. | Software Engineer — Full Stack & Backend",
   description:
-    "MS Applied Data Science @ USC. Backend engineer with 2+ years building high-performance APIs, distributed systems, and ML-integrated applications in Go, Python, and C++",
+    "MS Applied Data Science @ USC. Software engineer focused on full stack and backend systems — building fast APIs, performant frontends, and ML-integrated platforms in Go, Python, TypeScript, and React.",
   keywords: [
     "Gaurav Nagalapuram",
     "Gaurav N V",
@@ -49,12 +49,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
@@ -68,9 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased min-h-screen flex flex-col font-sans">
         <ModalProvider>
           <DrawerProvider>
-            <ToastProvider>
-              {children}
-            </ToastProvider>
+            <ToastProvider>{children}</ToastProvider>
           </DrawerProvider>
         </ModalProvider>
       </body>

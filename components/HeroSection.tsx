@@ -1,6 +1,10 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileText, faArrowRight, faMapPin } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFileText,
+  faArrowRight,
+  faMapPin,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { statsData } from "@/lib/data";
@@ -26,15 +30,19 @@ export default function HeroSection() {
       </div>
 
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
-        Full Stack &amp; <br />Data Engineer.
+        Software Engineer &amp; <br /> Full Stack & Backend
       </h1>
 
       <p className="text-sm md:text-base text-[var(--muted)] mt-4 mb-8 leading-relaxed">
-        JavaScript & TypeScript &nbsp;·&nbsp;Python &nbsp;·&nbsp; Go &nbsp;·&nbsp; C++ &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp; Distributed Systems &nbsp;·&nbsp; Databases
+        JavaScript & TypeScript &nbsp;·&nbsp;Python &nbsp;·&nbsp; Go
+        &nbsp;·&nbsp; React JS &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp;
+        Distributed Systems &nbsp;·&nbsp; Databases
       </p>
 
       <div className="text-base md:text-lg text-[var(--muted)] max-w-2xl leading-relaxed mb-8">
-       MS Applied Data Science @ USC. Full stack and data engineer with 2+ years building high-performance APIs, data pipelines, and distributed systems in Go, Python, and C++.
+        MS Applied Data Science @ USC. Software engineer focused on full stack
+        and backend systems — building fast APIs, performant frontends, and
+        ML-integrated platforms in Go, Python, TypeScript, and React.
       </div>
 
       <div className="flex flex-col gap-6">
@@ -44,41 +52,74 @@ export default function HeroSection() {
             download
             className="interactive cursor-none magnetic inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--fg)] text-[var(--bg)] hover:opacity-85 transition-opacity font-medium text-sm rounded-md shadow-sm"
           >
-            <FontAwesomeIcon icon={faFileText} className="w-4 h-4 pointer-events-none" />
+            <FontAwesomeIcon
+              icon={faFileText}
+              className="w-4 h-4 pointer-events-none"
+            />
             Resume
           </a>
           <div className="flex items-center gap-3">
-            <a href="https://github.com/naga251602" target="_blank"
+            <a
+              href="https://github.com/naga251602"
+              target="_blank"
               className="interactive cursor-none magnetic p-2.5 border border-[var(--border)] rounded-md hover:bg-[var(--fg)] hover:text-[var(--bg)] transition-colors text-[var(--fg)]"
-              aria-label="GitHub">
-              <FontAwesomeIcon icon={faGithub} className="w-4 h-4 pointer-events-none" />
+              aria-label="GitHub"
+            >
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="w-4 h-4 pointer-events-none"
+              />
             </a>
-            <a href="https://linkedin.com/in/gauravnv" target="_blank"
+            <a
+              href="https://linkedin.com/in/gauravnv"
+              target="_blank"
               className="interactive cursor-none magnetic p-2.5 border border-[var(--border)] rounded-md hover:bg-[var(--fg)] hover:text-[var(--bg)] transition-colors text-[var(--fg)]"
-              aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4 pointer-events-none" />
+              aria-label="LinkedIn"
+            >
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="w-4 h-4 pointer-events-none"
+              />
             </a>
-            <a href="mailto:nagalapu@usc.edu"
+            <a
+              href="mailto:nv.gau16@gmail.com"
               className="interactive cursor-none magnetic p-2.5 border border-[var(--border)] rounded-md hover:bg-[var(--fg)] hover:text-[var(--bg)] transition-colors text-[var(--fg)]"
-              aria-label="Email">
-              <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 pointer-events-none" />
+              aria-label="Email"
+            >
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                className="w-4 h-4 pointer-events-none"
+              />
             </a>
           </div>
         </div>
         <div>
-          <button onClick={() => open("about")}
-            className="interactive cursor-none group inline-flex items-center gap-2 font-mono text-xs md:text-sm text-[var(--muted)] hover:text-[var(--fg)] transition-colors">
+          <button
+            onClick={() => open("about")}
+            className="interactive cursor-none group inline-flex items-center gap-2 font-mono text-xs md:text-sm text-[var(--muted)] hover:text-[var(--fg)] transition-colors"
+          >
             Read more about me &amp; education
-            <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+            />
           </button>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12 mt-12 border-t border-[var(--border)] stagger-parent">
         {statsData.map((s, i) => (
-          <div key={s.label} className="stagger-item flex flex-col" style={{ transitionDelay: i > 0 ? `${i * 0.1}s` : undefined }}>
-            <span className="text-4xl font-bold text-[var(--fg)]">{s.value}</span>
-            <span className="text-xs font-mono text-[var(--muted)] uppercase tracking-widest mt-1">{s.label}</span>
+          <div
+            key={s.label}
+            className="stagger-item flex flex-col"
+            style={{ transitionDelay: i > 0 ? `${i * 0.1}s` : undefined }}
+          >
+            <span className="text-4xl font-bold text-[var(--fg)]">
+              {s.value}
+            </span>
+            <span className="text-xs font-mono text-[var(--muted)] uppercase tracking-widest mt-1">
+              {s.label}
+            </span>
           </div>
         ))}
       </div>
