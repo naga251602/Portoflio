@@ -6,7 +6,6 @@ import { useModal } from "@/lib/ModalContext";
 import { useDrawer } from "@/lib/DrawerContext";
 
 export default function Header() {
-  const [dark, setDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const { closeAll: closeAllModals } = useModal();
@@ -17,7 +16,6 @@ export default function Header() {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (saved === "dark" || (!saved && prefersDark)) {
       document.documentElement.classList.add("dark");
-      setDark(true);
     }
   }, []);
 
@@ -39,7 +37,6 @@ export default function Header() {
   const toggleTheme = () => {
     const isDark = document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-    setDark(isDark);
   };
 
   const handleNavClick = () => {
@@ -75,7 +72,12 @@ export default function Header() {
               className="text-[var(--fg)] hover:opacity-70 transition-opacity interactive cursor-none"
               aria-label="Toggle Theme"
             >
-              <FontAwesomeIcon icon={dark ? faSun : faMoon} className="w-4 h-4" />
+              <span className="hidden dark:block">
+                <FontAwesomeIcon icon={faSun} className="w-4 h-4" />
+              </span>
+              <span className="block dark:hidden">
+                <FontAwesomeIcon icon={faMoon} className="w-4 h-4" />
+              </span>
             </button>
             <button
               className="md:hidden text-[var(--fg)] interactive cursor-none"

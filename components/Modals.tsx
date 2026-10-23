@@ -10,7 +10,7 @@ import { FeaturedBadge, NewBadge } from "./Badges";
 import { useDrawer } from "@/lib/DrawerContext";
 import { useToast } from "./Toast";
 
-function ModalWrapper({ id, title, children, open, onClose }: {
+function ModalWrapper({ title, children, open, onClose }: {
   id: string; title: string; children: React.ReactNode; open: boolean; onClose: () => void;
 }) {
   useEffect(() => {

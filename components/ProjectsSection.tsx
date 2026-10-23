@@ -12,10 +12,7 @@ export default function ProjectsSection() {
   const { openDetails } = useDrawer();
   const { open } = useModal();
 
-  const sorted = Object.entries(detailsData.project)
-    .filter(([, d]) => !d.featured)
-    .sort(([, a], [, b]) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0))
-    .slice(0, 2);
+  const projects = Object.entries(detailsData.project).slice(0, 2);
 
   return (
     <section id="projects" className="scroll-mt-32 fade-up">
@@ -23,7 +20,7 @@ export default function ProjectsSection() {
         <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
       </div>
       <div className="flex flex-col border-t border-[var(--border)] stagger-parent">
-        {sorted.map(([id, d]) => (
+        {projects.map(([id, d]) => (
           <div key={id}
             className="stagger-item group interactive cursor-none border-b border-[var(--border)] py-6 list-item-hover px-2 -mx-2 relative flex flex-col"
             onClick={() => openDetails("project", id)}

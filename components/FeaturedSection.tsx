@@ -24,7 +24,9 @@ export default function FeaturedSection() {
       if (d.featured) allFeatured.push({ type, id, d });
     }
   }
-  const items = allFeatured.slice(0, 3);
+  const items = allFeatured;
+
+  if (items.length === 0) return null;
 
   const copyCitation = (id: string) => {
     const text = citations[id] || "";

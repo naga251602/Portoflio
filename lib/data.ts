@@ -36,10 +36,62 @@ export type DetailsData = {
 
 export const detailsData: DetailsData = {
   project: {
+      subletsafe: {
+        title: "SubletSafe | Verified Student Sublet Platform",
+        subtitle: "Project",
+        featured: true,
+        isNew: true,
+        description:
+          "<p>Processed <strong>$52,000+</strong> in escrow-held payments across <strong>140+ verified bookings</strong> with <strong>zero</strong> payment discrepancies, via an idempotent escrow state machine on Stripe Connect webhooks.</p><br/><p>Held <strong>sub-120ms p95 latency at 500 concurrent users</strong> in k6 load tests, using Redis cache-aside, connection pooling, and composite PostgreSQL indexes.</p><br/><p>Cut fraudulent listings to <strong>under 2%</strong> of submissions with .edu email verification and lease-document checks; hit <strong>92% test coverage</strong> on payment-critical paths as merge-blocking GitHub Actions checks.</p>",
+        stack: [
+          "TypeScript",
+          "Next.js",
+          "FastAPI",
+          "PostgreSQL",
+          "Redis",
+          "Stripe",
+          "Docker",
+          "GitHub Actions",
+          "AWS S3",
+        ],
+        link: "",
+        linkText: "Repository",
+        linkIcon: "github",
+        visual:
+          "Next.js Frontend<br/>↓<br/>FastAPI Service & Escrow State Machine<br/>↓<br/>PostgreSQL · Redis · Stripe Connect · AWS S3",
+        screenshots: [],
+    },
+    coderoyale: {
+      title: "Code Royale | Real-Time Shader Battle Arena",
+      subtitle: "Project",
+      featured: true,
+      isNew: true,
+      description:
+        "<p>Sustained <strong>1,000+ concurrent WebSocket connections</strong> on a single Go instance with <strong>sub-50ms</strong> keystroke broadcast latency, via a goroutine-per-room architecture with Redis pub/sub fan-out.</p><br/><p>Rendered <strong>8 live shader canvases at 60fps</strong> in one spectating view by streaming code diffs instead of full sources and batching WebGL canvas updates, with Kafka streaming match events and OpenTelemetry tracing room servers behind an Nginx WebSocket load balancer.</p><br/><p>Recovered <strong>95%+</strong> of dropped sessions mid-round without state loss, using server-authoritative timers and snapshot-based resync.</p>",
+      stack: [
+        "Go",
+        "TypeScript",
+        "React",
+        "WebGL",
+        "WebSockets",
+        "Redis",
+        "PostgreSQL",
+        "Kafka",
+        "OpenTelemetry",
+        "Nginx",
+      ],
+      link: "",
+      linkText: "Repository",
+      linkIcon: "github",
+      visual:
+        "React + WebGL Spectating Grid<br/>↓<br/>Go Room Servers · Nginx WebSocket Load Balancer<br/>↓<br/>Redis Pub/Sub · Kafka Events · PostgreSQL",
+      screenshots: [],
+    },
+
     aistora: {
       title: "AIStora | Full-Stack Analytics Platform",
       subtitle: "Project",
-      featured: true,
+      featured: false,
       isNew: false,
       description:
         "<p>Outperformed Pandas <strong>3×</strong> on sort, group-by, and join operations across 100K+ row datasets by architecting an in-memory columnar query engine in Python using Apache Arrow, delivering sub-second filtering and aggregation.</p><br/><p>Shipped a production-grade Flask REST API with JWT auth and RBAC for secure multi-tenant querying, backed by PostgreSQL with per-user schema isolation. Containerized via Docker Compose with <strong>85% test coverage</strong> and automated CI/CD via GitHub Actions.</p><br/><p>Built a React dashboard with Recharts enabling non-technical users to query and visualize large datasets without writing SQL — closing the loop from raw data to insight in under 3 clicks.</p>",
@@ -63,7 +115,7 @@ export const detailsData: DetailsData = {
     graphql: {
       title: "GraphQL Task Management API",
       subtitle: "Project",
-      featured: true,
+      featured: false,
       isNew: false,
       description:
         "<p>Held <strong>sub-100ms p99 latency at 1,000+ concurrent WebSocket connections</strong> by designing a schema-first GraphQL API with FastAPI and Strawberry, integrating Redis DataLoader batching to eliminate N+1 query overhead.</p><br/><p>Reduced average payload size <strong>60%</strong> on deeply nested task/subtask queries versus equivalent REST endpoints, with OAuth 2.0 PKCE flow handling auth across the full connection lifecycle.</p>",
@@ -87,7 +139,7 @@ export const detailsData: DetailsData = {
       title: "Deep Neural Net IPL Predictor | Multi-Modal Win Forecasting",
       subtitle: "Project",
       featured: false,
-      isNew: true,
+      isNew: false,
       description:
         "<p>Achieved <strong>80% test accuracy</strong> on 2025 IPL match outcomes by building a multi-modal deep learning framework integrating performance data from 13 cricket leagues across 235 players, with league-quality weighting and recency decay.</p><br/><p>Designed a Dynamic OVR rating system (55–97 scale) feeding a 4-source weighted attention transformer with learnable fusion weights, capturing phase-specific batting (Top Order, Middle, Finisher) and bowling (Powerplay, Middle, Death) performance.</p><br/><p>Boosted reliability to a <strong>Brier score of 0.24</strong> by combining a 2-layer Graph Attention Network modeling batter-bowler matchup asymmetries with a 10,000-iteration Monte Carlo simulation engine, deployed as a Flask API with SHAP explainability at sub-2s latency.</p>",
       stack: [
@@ -110,7 +162,7 @@ export const detailsData: DetailsData = {
       title: "PriceWatch | Automated Price Drop Tracker with Email Alerts",
       subtitle: "Project",
       featured: false,
-      isNew: true,
+      isNew: false,
       description:
         "<p>Cut user response time to deals from hours to <strong>under 60 seconds</strong> by building a Cheerio-based scraping pipeline that parses live product prices and fires instant transactional emails via Nodemailer the moment a target price hits.</p><br/><p>Reduced redundant scrape requests <strong>~40%</strong> across 200+ tracked products by implementing cross-user URL deduplication on hourly cron checks, lowering infrastructure cost without sacrificing freshness.</p><br/><p>Secured the platform with Supabase Auth (email/password + Google OAuth) and Row Level Security policies, plus a token-based one-click unsubscribe flow requiring no login.</p>",
       stack: [
@@ -163,7 +215,7 @@ export const detailsData: DetailsData = {
       linkText: "Repository",
       linkIcon: "github",
       visual: "",
-      screenshots: ["/public/demo_gblog.png"],
+      screenshots: ["/demo_gblog.png"],
     },
     supablog: {
       title: "SupaBlog | Node.js Blog Platform",

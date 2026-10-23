@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXmark, faArrowLeft, faUpRightFromSquare, faBuilding, faCalendar,
@@ -10,9 +10,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useDrawer } from "@/lib/DrawerContext";
 import { detailsData } from "@/lib/data";
 import { skillMetaMap, stripHtml } from "@/lib/skillMetaMap";
-import { skillsConfig } from "@/lib/data";
 import { SkillPillsWithOverflow } from "./SkillPill";
-import Image from "next/image";
 
 const DRAWER_TYPE_CONFIG: Record<string, { label: string; icon: typeof faXmark; accent: string }> = {
   project:     { label: "Project",     icon: faFolderOpen, accent: "#6d28d9" },
