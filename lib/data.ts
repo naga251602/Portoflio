@@ -87,7 +87,28 @@ export const detailsData: DetailsData = {
         "React + WebGL Spectating Grid<br/>↓<br/>Go Room Servers · Nginx WebSocket Load Balancer<br/>↓<br/>Redis Pub/Sub · Kafka Events · PostgreSQL",
       screenshots: [],
     },
-
+    palate: {
+      title: "Palate | Restaurant Bookmarking iOS App",
+      subtitle: "Project",
+      featured: true,
+      isNew: false,
+      description:
+        "<p>Built an iOS app on AWS Serverless that lets users bookmark restaurants by forwarding a WhatsApp text, IG reel, FB message, or email, automating multi-channel ingestion with no manual entry needed.</p><br/><p>Boosted restaurant bookmarking <strong>70%+</strong> and collapsed 5+ scattered apps into one by building maps, reminders, and directions natively, with OAuth/OTP handling secure sign-in.</p>",
+      stack: [
+        "Swift",
+        "AWS Serverless",
+        "Supabase",
+        "OAuth/OTP",
+        "Maps",
+        "gRPC",
+      ],
+      link: "https://github.com/naga251602/palate",
+      linkText: "Repository",
+      linkIcon: "github",
+      visual:
+        "iOS App (Swift)<br/>↓<br/>AWS Serverless Backend<br/>↓<br/>WhatsApp · Instagram · Facebook · Email Ingestion",
+      screenshots: ["/demo_palate.gif"],
+    },
     aistora: {
       title: "AIStora | Full-Stack Analytics Platform",
       subtitle: "Project",
