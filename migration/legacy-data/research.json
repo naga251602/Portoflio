@@ -1,0 +1,57 @@
+[
+  {
+    "demo": false,
+    "slug": "human-ai-backend-text-generation",
+    "short": "Human-AI text generation",
+    "title": "Human-AI Collaboration for Backend Text Generation: Dynamic Content Recommendation for Websites based on Keywords",
+    "abstract": "A keyword-driven content recommendation engine that uses GPT-based pipelines to generate and personalize backend website copy.",
+    "question": "How can GPT-based pipelines generate and personalize website copy from keywords, and how does it compare with human-written copy?",
+    "method": "Co-developed the keyword-driven recommendation engine, then compared its output with human-written baselines in user studies with 40+ participants who scored coherence, relevance and preference.",
+    "findings": "Reduced manual authoring time by 60%. The paper won Best Paper, 3rd Place at the 2024 International Conference on Computing and Data Science (ICCDS).",
+    "status": "ICCDS 2024 | Best Paper, 3rd Place | 4 citations",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10560437",
+    "bibtex": "@inproceedings{venkataramanan2024humanai,\n  title={Human-AI Collaboration for Backend Text Generation},\n  booktitle={ICCDS 2024},\n  year={2024}\n}",
+    "skills": [
+      "Python",
+      "NLP",
+      "GPT"
+    ]
+  },
+  {
+    "demo": false,
+    "slug": "sentiment-drug-recommendation",
+    "short": "Drug recommendation",
+    "title": "Sentiment-Based Drug Recommendation System",
+    "abstract": "An NLP pipeline that classifies the sentiment of patient reviews and turns it into ranked drug recommendations.",
+    "question": "Can the sentiment in patient reviews be used to rank drug recommendations?",
+    "method": "Co-developed an NLP pipeline with a fine-tuned BERT model on domain-specific patient review data, and compared it against TF-IDF and LSTM baselines.",
+    "findings": "Reached 88% classification accuracy, with a 12-point F1 improvement over the baselines from transfer learning with biomedical pretraining.",
+    "status": "ICCDS 2024 | 3 citations",
+    "url": "https://www.researchgate.net/profile/Shai-Kumar/publication/394529865",
+    "bibtex": "@inproceedings{venkataramanan2024sentiment,\n  title={Sentiment-Based Drug Recommendation System},\n  booktitle={ICCDS 2024},\n  year={2024}\n}",
+    "skills": [
+      "Python",
+      "NLP",
+      "BERT"
+    ]
+  },
+  {
+    "demo": false,
+    "slug": "pneumonia-detection-densenet",
+    "short": "Pneumonia detection",
+    "title": "Automated Pneumonia Detection using DenseNet",
+    "abstract": "A DenseNet-121 model that detects pneumonia in chest X-rays.",
+    "question": "How well does DenseNet detect pneumonia in chest X-rays compared with other common CNNs?",
+    "method": "Co-trained DenseNet-121 on the CheXpert chest X-ray dataset with augmentation and class weighting to handle label imbalance, and benchmarked it against ResNet-50 and VGG-16.",
+    "findings": "Reached 92% precision-recall AUC on the held-out test set. DenseNet beat the other models by 6% AUC, thanks to dense skip connections that let layers reuse features.",
+    "status": "ICCN 2024",
+    "url": "https://link.springer.com/chapter/10.1007/978-981-96-6124-4_8",
+    "bibtex": "@inproceedings{venkataramanan2024pneumonia,\n  title={Automated Pneumonia Detection using DenseNet},\n  booktitle={ICCN 2024},\n  year={2024}\n}",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Computer vision",
+      "DenseNet"
+    ]
+  }
+]

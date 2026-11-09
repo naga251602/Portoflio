@@ -1,0 +1,91 @@
+[
+  {
+    "demo": false,
+    "role": "Software Engineer (Full Stack)",
+    "company": "Aadithya Cars | Chennai, India",
+    "dates": "Apr 2024 - Nov 2024",
+    "description": "Full stack work on a Next.js and MySQL web platform with a microservices-based backend. I owned features from design through deployment and monitoring.",
+    "highlights": [
+      "Cut initial page load 75% (3.2s to 800ms) with lazy loading, code splitting, and Brotli compression.",
+      "Reached 99.5% uptime with circuit-breaker patterns, owning the feature from design through deployment and monitoring.",
+      "Scaled data ingestion 4x by replacing monolithic CSV loading with a chunk-based streaming pipeline across 500K+ row inventory datasets, which removed out-of-memory crashes.",
+      "Improved SQL query performance 35% with composite index design."
+    ],
+    "skills": [
+      "Next.js",
+      "MySQL",
+      "Microservices",
+      "Performance",
+      "System design"
+    ]
+  },
+  {
+    "demo": false,
+    "role": "Software Engineering Intern",
+    "company": "Virtusa (college provided) | Chennai, India",
+    "dates": "Dec 2023 - Apr 2024",
+    "description": "Backend owner of EMart IMS, an inventory management system, working with 3 other engineers.",
+    "highlights": [
+      "Owned the backend of EMart IMS and shipped real-time stock tracking and a maker-checker approval workflow, cutting manual stock discrepancy errors by about 40%.",
+      "Cut invoice processing from about 2 days to same-day with a SHA-256 validated data ingestion pipeline across 3 backend modules."
+    ],
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "REST APIs"
+    ]
+  },
+  {
+    "demo": false,
+    "role": "Research Assistant",
+    "company": "R.M.K. Engineering College | Chennai, India",
+    "dates": "Sep 2023 - Apr 2024",
+    "description": "Python backend and data work for ML research projects under faculty supervision.",
+    "highlights": [
+      "Co-authored 3 conference papers by building Python backend systems that integrate sentiment analysis, text generation, and DenseNet medical image classification models. One paper won Best Paper, 3rd Place at ICCDS 2024.",
+      "Built data ingestion and preprocessing pipelines for 3 ML research projects, and helped with experiments and manuscript writing across 7 total citations."
+    ],
+    "skills": [
+      "Python",
+      "PyTorch",
+      "NLP",
+      "Computer vision"
+    ]
+  },
+  {
+    "demo": false,
+    "role": "Software Engineering Intern",
+    "company": "Virtusa | Chennai, India",
+    "dates": "Jul 2022 - Aug 2022",
+    "description": "Team lead for a 6-week full stack e-commerce project.",
+    "highlights": [
+      "Led a team of 3 to deliver a full stack e-commerce grocery platform (Spring MVC, Angular, MySQL) in 6 weeks, covering product catalog, cart, checkout, and order management across 5 core user flows.",
+      "Built 8 REST endpoints with Hibernate ORM and Spring Security, holding sub-3s page loads under a simulated 50-user load during the final demo review."
+    ],
+    "skills": [
+      "Java",
+      "Spring MVC",
+      "Angular",
+      "MySQL"
+    ]
+  },
+  {
+    "demo": false,
+    "role": "Software Development Intern",
+    "company": "SAWBON | Remote",
+    "dates": "Feb 2022 - Mar 2022",
+    "description": "Backend APIs in Go and some frontend work in Remix JS.",
+    "highlights": [
+      "Built concurrent Go REST APIs with goroutines, channels, and connection pooling on MongoDB, sustaining sub-250ms p95 at 500 concurrent users with zero downtime.",
+      "Cut repeated database hits about 65% with Redis caching.",
+      "Built reusable Remix JS components and replaced repeated markup with mapped rendering, which cut duplicate code and made new pages faster to add."
+    ],
+    "skills": [
+      "Go (Gin)",
+      "Remix JS",
+      "MongoDB",
+      "Redis"
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+export const site = {name:"Naga",role:"Software Engineer",headline:"Software, data, and systems engineering",description:"Building thoughtful software, storage systems, and machine learning tools.",socials:[{label:"GitHub",href:"https://github.com/naga251602"},{label:"LinkedIn",href:"https://www.linkedin.com/in/gauravnv"},{label:"Email",href:"mailto:nagalapu@usc.edu"}]};

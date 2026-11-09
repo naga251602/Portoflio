@@ -1,0 +1,159 @@
+---
+{
+  "slug": "kvrocks-xdel-duplicate-ids",
+  "title": "Fixing a Silent Stream Corruption Bug in Apache Kvrocks: When XDEL Counts the Same ID Twice",
+  "date": "2026-10-21",
+  "tags": [
+    "C++",
+    "RocksDB",
+    "Apache Kvrocks",
+    "Open source"
+  ],
+  "takeaways": [
+    "Staged WriteBatch deletes are invisible to database reads.",
+    "Deduplicate IDs before counting deletions.",
+    "Guard unsigned subtraction and test repeated IDs."
+  ],
+  "summary": "# Fixing a Silent Stream Corruption Bug in Apache Kvrocks: When XDEL Counts the Same ID Twice  I recently fixed a data-corruption bug in [Apache Kvrocks](https://github.com/apache/kvrocks), the Redis-compatible database built on R",
+  "project": "",
+  "draft": false
+}
+---
+
+# Fixing a Silent Stream Corruption Bug in Apache Kvrocks: When XDEL Counts the Same ID Twice
+
+I recently fixed a data-corruption bug in [Apache Kvrocks](https://github.com/apache/kvrocks), the Redis-compatible database built on RocksDB, where deleting a stream entry could silently desynchronize the stream's length and, in the worst case, wrap it around to 2⁶⁴ − 1 (that's 18,446,744,073,709,551,615 entries in a stream that actually has one).
+
+The fix is in [PR #3701](https://github.com/apache/kvrocks/pull/3701), addressing [issue #3700](https://github.com/apache/kvrocks/issues/3700). This post walks through the bug, the root cause, the fix, and what the contribution process taught me.
+
+## The Bug Report
+
+The report was simple and reproducible. In Redis semantics, `XDEL` removes entries from a stream and returns how many were actually deleted. If you pass the same ID twice in one call, the second occurrence should be a no-op: the entry is already gone.
+
+In Kvrocks, this happened instead:
+
+```text
+XADD s 1-0 f v
+XADD s 2-0 f v
+XDEL s 1-0 1-0
+```
+
+`XDEL` returned **2**, claiming both copies of `1-0` were deleted, even though the stream only ever had one such entry. And `XLEN s` now reported **0**, even though `2-0` was still in the stream.
+
+Push it one step further, delete the same ID three times, and the stored stream length underflowed: `XLEN` would report 2⁶⁴ − 1. A two-entry stream claiming to hold eighteen quintillion entries.
+
+## Background: How Kvrocks Stores a Stream
+
+Like most storage engines, Kvrocks doesn't count stream entries on read. Instead, each stream has a **metadata record** that caches the stream's length (`metadata.size`), along with the first and last entry IDs. Every `XADD` increments the cached count; every `XDEL` decrements it. `XLEN` is then an O(1) metadata read.
+
+This denormalization is fast, but it makes one thing absolutely critical: **the cached count and the actual entries must never disagree.** The bug was a place where they could.
+
+Deletes in Kvrocks are staged in a RocksDB `WriteBatch` and applied atomically when the batch is written. That detail turns out to be the whole story.
+
+## Root Cause: Reads That Can't See Their Own Batch
+
+The deletion logic lives in `Stream::DeleteEntries` in `src/types/redis_stream.cc`. Simplified, the original loop did this for each requested ID:
+
+1. Look the entry up with `storage_->Get(...)`.
+2. If found, stage a `Delete` for it in the local `WriteBatch`.
+3. Increment `deleted_cnt`.
+
+The subtlety is in step 1: `storage_->Get` reads from the **database**, not from the batch. The `Delete` staged in step 2 is invisible to it: the batch hasn't been written yet.
+
+So when the same ID appears twice in one `XDEL` call:
+
+- First occurrence: entry found, delete staged, count = 1.
+- Second occurrence: `Get` **still finds the entry** (the staged delete isn't visible), stages a second delete, count = 2.
+
+Now `deleted_cnt` (2) no longer reflects reality (1). Three failure modes follow from that one wrong number:
+
+1. **Wrong return value:** `XDEL` reports 2 deletions for 1 real entry.
+2. **Desynchronized length:** `metadata.size -= deleted_cnt` subtracts too much, so `XLEN` reports 0 while an entry still exists.
+3. **Unsigned underflow:** pass the ID three times and `deleted_cnt` (3) exceeds the stream size (2). Since `size` is unsigned, `2 - 3` wraps to 2⁶⁴ − 1. The stream's metadata is now corrupt until the stream is deleted.
+
+There was a fourth, quieter consequence: an inflated `deleted_cnt` could also satisfy the `deleted_cnt == metadata.size` check that decides the stream has been emptied, causing the code to clear the first/last entry IDs while entries still remained.
+
+The root cause, in one sentence: **the loop assumed read-your-writes semantics that a staged WriteBatch does not provide.**
+
+## The Fix
+
+Two changes, each doing a different job:
+
+**1. Deduplicate the input (the actual fix).** A `std::set<StreamEntryID>` tracks which IDs this call has already processed. A repeated ID is skipped before any lookup happens:
+
+```cpp
+std::set<StreamEntryID> seen_ids;
+for (const auto &id : ids) {
+  if (!seen_ids.insert(id).second) {
+    continue;  // already handled in this call
+  }
+  // ... lookup, stage delete, count
+}
+```
+
+This fixes the bug at its source: `deleted_cnt` can now only ever count real, distinct entries.
+
+**2. Clamp the subtraction (defense in depth).** The length update became:
+
+```cpp
+metadata.size = *deleted_cnt > metadata.size
+                    ? 0
+                    : metadata.size - *deleted_cnt;
+```
+
+Even if some future code path miscounts, this subtraction can no longer underflow. The dedupe makes the count *correct*; the clamp protects against unsigned wraparound. It does not repair an already incorrect count. Correctness first, belt and suspenders second.
+
+## The Regression Test
+
+A fix without a test that fails before it and passes after it is just an opinion. I added a Go integration test in `tests/gocase/unit/type/stream/stream_test.go`:
+
+```go
+t.Run("XDEL with repeated IDs counts each entry once", func(t *testing.T) {
+    require.NoError(t, rdb.Del(ctx, "somestream").Err())
+    require.NoError(t, rdb.XAdd(ctx, &redis.XAddArgs{
+        Stream: "somestream", ID: "1-0",
+        Values: []string{"foo", "value0"},
+    }).Err())
+    require.NoError(t, rdb.XAdd(ctx, &redis.XAddArgs{
+        Stream: "somestream", ID: "2-0",
+        Values: []string{"foo", "value1"},
+    }).Err())
+
+    // A repeated ID must be counted once; the stream length must stay consistent.
+    require.EqualValues(t, 1,
+        rdb.XDel(ctx, "somestream", "1-0", "1-0").Val())
+    require.EqualValues(t, 1, rdb.XLen(ctx, "somestream").Val())
+    items := rdb.XRange(ctx, "somestream", "-", "+").Val()
+    require.Len(t, items, 1)
+    require.Equal(t, "2-0", items[0].ID)
+
+    // Deleting the last entry with repeats must not underflow the length.
+    require.EqualValues(t, 1,
+        rdb.XDel(ctx, "somestream", "2-0", "2-0", "2-0").Val())
+    require.EqualValues(t, 0, rdb.XLen(ctx, "somestream").Val())
+})
+```
+
+It checks all three symptoms: the return count, the length, and the surviving entry, plus the underflow case on the way out.
+
+## Notes From the Contribution Process
+
+The fix itself took hours. Getting it through review took days, and the gap between those two is where most of the learning was:
+
+- **CI is a conversation, not a verdict.** My first CI run failed lint three ways: an out-of-order `#include`, a trailing space, a missing blank line. All mine, all fair. The second lint failure was sneakier: a blank line I'd re-added to satisfy the first round carried two invisible trailing spaces, and it only surfaced a day later because the full lint job hadn't actually run on the intermediate commit. Lesson: run the formatter locally on the whole file (`./x.py check format`) *before* pushing. One local run shows every violation at once, instead of one per CI round.
+- **Not every red cell is yours.** One failing job was a 1-millisecond timing race in a hash-expiration test on a loaded macOS runner, a known class of flake in a subsystem my change never touched. Learning to read a failure and prove it's unrelated (instead of panicking or "fixing" it) is a real engineering skill.
+- **First-time contributors run on approvals.** My pushes needed a maintainer to approve the CI workflows before they ran. Batch your changes; each push can restart that wait.
+- **Apache asks about AI use, and that's fine.** A maintainer asked me to add an AI-use disclosure to the PR description, per the project's contribution guidelines. I did, plainly: AI tools helped verify the root cause and review the implementation; the C++ is mine, and I can explain every line of it. That's the honest answer, and it was accepted without drama. Projects don't fear AI assistance; they fear contributors who can't defend their own code.
+- **Maintainers move fast when you make it easy.** My PR got a bot review, a disclosure request, real approvals, and a "please fix the format issue" within two days, because the PR was small, did one thing, and had a regression test.
+
+## What This Bug Taught Me
+
+1. **Batches are not transactions against yourself.** Staging writes in a batch does not make them visible to your own reads. Any read-modify-write loop that mixes `Get` with a local batch needs to track what it has already staged, or already seen.
+2. **Unsigned arithmetic doesn't fail, it lies.** A signed count would have gone negative and been obvious. The unsigned wrap produced a plausible-looking, astronomically wrong number stored durably in metadata.
+3. **Denormalized counters are a liability you choose.** Caching `size` makes `XLEN` O(1), and makes every writer responsible for the invariant. Each code path that touches the count deserves the question: *what input makes this decrement wrong?*
+4. **Fix the cause, then fence it.** Dedupe fixed the bug; the clamp guards against unsigned underflow if a future path miscounts. Reviewers like seeing both, for different reasons.
+
+---
+
+*Gaurav Nagalapuram Venkataramanan is a master's student at USC (Viterbi) working on high-performance C++ storage systems and Linux internals. The fix: [apache/kvrocks#3701](https://github.com/apache/kvrocks/pull/3701) · The bug: [apache/kvrocks#3700](https://github.com/apache/kvrocks/issues/3700)*
+

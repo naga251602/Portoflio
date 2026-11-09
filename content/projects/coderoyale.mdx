@@ -1,0 +1,30 @@
+---
+{
+  "id": "coderoyale",
+  "title": "Code Royale",
+  "summary": "A real-time shader battle arena. One Go server holds 1,000+ WebSocket connections while players spectate each other's live WebGL canvases.",
+  "details": "- Held **1,000+ WebSocket connections** on one Go instance at **sub-50ms** broadcast latency with a goroutine-per-room design, backed by Kafka event streaming, OpenTelemetry tracing, and Nginx sticky sessions.\n- Rendered **8 live shader canvases at 60fps** in one spectating view by streaming code diffs instead of full sources and batching WebGL canvas updates.\n- Recovered **95%+** of dropped sessions mid-round without state loss, using server-authoritative timers and snapshot-based resync.",
+  "stack": [
+    "Go",
+    "TypeScript",
+    "React",
+    "WebGL",
+    "WebSockets",
+    "PostgreSQL",
+    "Kafka",
+    "OpenTelemetry",
+    "Nginx"
+  ],
+  "category": "real time",
+  "level": "featured",
+  "github": "",
+  "githubSlug": "coderoyale",
+  "date": "",
+  "emoji": "",
+  "related": []
+}
+---
+
+- Held **1,000+ WebSocket connections** on one Go instance at **sub-50ms** broadcast latency with a goroutine-per-room design, backed by Kafka event streaming, OpenTelemetry tracing, and Nginx sticky sessions.
+- Rendered **8 live shader canvases at 60fps** in one spectating view by streaming code diffs instead of full sources and batching WebGL canvas updates.
+- Recovered **95%+** of dropped sessions mid-round without state loss, using server-authoritative timers and snapshot-based resync.

@@ -1,0 +1,13 @@
+---
+{"slug":"kvrocks-stream-fix","title":"Apache Kvrocks: Fixing duplicate XDEL stream IDs","repo":"https://github.com/apache/kvrocks","date":"2026-10-21","summary":"Fixed a stream length underflow caused by duplicate IDs in XDEL.","tags":["C++","RocksDB","Apache Kvrocks"]}
+---
+
+## The problem
+
+Repeated stream entry IDs could be double-counted during deletion, allowing an unsigned stream length to underflow.
+
+## The fix
+
+Deduplicate IDs per deletion request, guard the length calculation and test repeated IDs.
+
+[Read the technical write-up](/blog/kvrocks-xdel-duplicate-ids) and [see the pull request](https://github.com/apache/kvrocks/pull/3701).

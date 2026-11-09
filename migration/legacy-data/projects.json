@@ -1,0 +1,234 @@
+[
+  {
+    "id": "subletsafe",
+    "t": "SubletSafe",
+    "tg": "full stack",
+    "lv": "featured",
+    "g": "subletsafe",
+    "st": [
+      "TypeScript",
+      "Next.js",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Stripe",
+      "Docker",
+      "GitHub Actions",
+      "AWS"
+    ],
+    "d": "A verified student sublet platform. Payments are held in escrow by an idempotent state machine on Stripe Connect webhooks, and listings are checked with .edu email and lease documents.",
+    "dl": "- Processed **$52,000+** in escrow-held payments across **140+ verified bookings** with zero payment discrepancies, using an idempotent escrow state machine on Stripe Connect webhooks.\n- Held **sub-120ms p95 latency at 500 concurrent users** in k6 load tests, using Redis cache-aside, connection pooling, and composite PostgreSQL indexes.\n- Cut fraudulent listings to **under 2%** of submissions with .edu email verification and lease-document checks, and hit **92% test coverage** on payment-critical paths as merge-blocking GitHub Actions checks."
+  },
+  {
+    "id": "orilix",
+    "t": "Orilix",
+    "tg": "ai",
+    "lv": "featured",
+    "repo": "https://github.com/naga251602/orilix",
+    "st": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "Firebase",
+      "Gemini API",
+      "MCP"
+    ],
+    "d": "An AI medical intake and scribe platform. It swaps static forms for an adaptive Gemini questionnaire and writes SOAP notes from the intake and from doctor dictation.",
+    "dl": "- Cut average patient intake time **45%** (12 min to 6.5 min) by replacing static forms with a Gemini-driven adaptive questionnaire that asks about 14 contextual questions instead of 40 fixed ones.\n- Generated structured SOAP notes from intake responses in **under 10 seconds** vs. about 15 minutes manually, and transcribed doctor dictation into SOAP, summary, and bullet formats.\n- Extracted vitals from free-text dictation into structured JSON with **95% accuracy**, with Firebase Auth (JWT) securing clinic staff access and Firestore storing patient records."
+  },
+  {
+    "id": "model-laboratory",
+    "t": "3D Loss Landscape & Model Laboratory",
+    "tg": "machine learning",
+    "lv": "interactive demo",
+    "st": [
+      "JavaScript",
+      "Canvas 2D",
+      "Optimization",
+      "Neural Networks",
+      "Graph Learning",
+      "K-means"
+    ],
+    "d": "An interactive laboratory for gradient descent, neural activations, graph attention, and clustering, with a documented simulation notebook.",
+    "dl": "A visual study of optimization and learning using synthetic models. Open the project to inspect its completed-state preview, run the models manually, and examine the underlying source and observations."
+  },
+  {
+    "id": "palate",
+    "t": "Palate",
+    "tg": "mobile",
+    "lv": "featured",
+    "repo": "https://github.com/naga251602/palate",
+    "st": [
+      "Swift",
+      "AWS Serverless",
+      "OAuth/OTP",
+      "Maps",
+      "gRPC"
+    ],
+    "d": "An iOS app that saves restaurants when you forward a WhatsApp text, Instagram reel, Facebook message or email to it.",
+    "dl": "- Built an iOS app on AWS Serverless that lets users bookmark restaurants by forwarding a WhatsApp text, IG reel, FB message, or email, so there is no manual entry.\n- Collapsed **5+ scattered apps into 1** by building maps, reminders, and directions natively in Swift, with OAuth/OTP sign-in.\n- Used gRPC streaming between the Swift app and the backend to push share-ingestion status and saved-restaurant sync in **under 100ms**, replacing REST polling that took 2 to 3s per refresh."
+  },
+  {
+    "id": "coderoyale",
+    "t": "Code Royale",
+    "tg": "real time",
+    "lv": "featured",
+    "g": "coderoyale",
+    "st": [
+      "Go",
+      "TypeScript",
+      "React",
+      "WebGL",
+      "WebSockets",
+      "PostgreSQL",
+      "Kafka",
+      "OpenTelemetry",
+      "Nginx"
+    ],
+    "d": "A real-time shader battle arena. One Go server holds 1,000+ WebSocket connections while players spectate each other's live WebGL canvases.",
+    "dl": "- Held **1,000+ WebSocket connections** on one Go instance at **sub-50ms** broadcast latency with a goroutine-per-room design, backed by Kafka event streaming, OpenTelemetry tracing, and Nginx sticky sessions.\n- Rendered **8 live shader canvases at 60fps** in one spectating view by streaming code diffs instead of full sources and batching WebGL canvas updates.\n- Recovered **95%+** of dropped sessions mid-round without state loss, using server-authoritative timers and snapshot-based resync."
+  },
+  {
+    "id": "aistora",
+    "t": "AIStora",
+    "tg": "ml / data",
+    "lv": "side project",
+    "repo": "https://github.com/naga251602/aistora",
+    "st": [
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "Apache Arrow",
+      "Docker",
+      "GitHub Actions",
+      "React",
+      "JWT"
+    ],
+    "d": "A full stack analytics platform with its own in-memory columnar query engine, built in Python on Apache Arrow.",
+    "dl": "- Beat Pandas by **3x** on sort, group-by, and join operations across 100K+ row datasets with an in-memory columnar query engine in Python on Apache Arrow, with sub-second filtering and aggregation.\n- Shipped a production-grade Flask REST API with JWT auth and RBAC for secure multi-tenant querying, backed by PostgreSQL with per-user schema isolation. Containerized with Docker Compose, **85% test coverage**, and CI/CD through GitHub Actions.\n- Built a React dashboard with Recharts so non-technical users can query and visualize large datasets without writing SQL, going from raw data to insight in under 3 clicks."
+  },
+  {
+    "id": "graphql",
+    "t": "GraphQL Task Management API",
+    "tg": "backend",
+    "lv": "side project",
+    "repo": "https://github.com/naga251602/todo-graphql",
+    "st": [
+      "FastAPI",
+      "GraphQL",
+      "Strawberry",
+      "Redis",
+      "Python",
+      "OAuth 2.0",
+      "WebSockets"
+    ],
+    "d": "A schema-first GraphQL API that stays fast with 1,000+ live WebSocket connections.",
+    "dl": "- Held **sub-100ms p99 latency at 1,000+ concurrent WebSocket connections** with a schema-first GraphQL API on FastAPI and Strawberry, using Redis DataLoader batching to remove N+1 query overhead.\n- Reduced average payload size **60%** on deeply nested task and subtask queries compared to equivalent REST endpoints, with an OAuth 2.0 PKCE flow handling auth across the connection lifecycle."
+  },
+  {
+    "id": "iplpredictor",
+    "t": "Deep Neural Net IPL Predictor",
+    "tg": "ml / data",
+    "lv": "side project",
+    "repo": "https://github.com/Nikhilr-28/Deep-Neural-Network-IPL-Prediction",
+    "st": [
+      "Python",
+      "PyTorch",
+      "Flask",
+      "Graph Attention Networks",
+      "Monte Carlo",
+      "React",
+      "SHAP"
+    ],
+    "d": "A multi-modal deep learning model that forecasts IPL match winners from player data across 13 cricket leagues.",
+    "dl": "- Reached **80% test accuracy** on 2025 IPL match outcomes with a multi-modal deep learning framework built on performance data from 13 cricket leagues and 235 players, using league-quality weighting and recency decay.\n- Designed a Dynamic OVR rating system (55 to 97 scale) feeding a 4-source weighted attention transformer with learnable fusion weights, capturing phase-specific batting (Top Order, Middle, Finisher) and bowling (Powerplay, Middle, Death) performance.\n- Reached a **Brier score of 0.24** by combining a 2-layer Graph Attention Network for batter-bowler matchups with a 10,000-iteration Monte Carlo simulation engine, deployed as a Flask API with SHAP explainability at sub-2s latency."
+  },
+  {
+    "id": "pricewatch",
+    "t": "PriceWatch",
+    "tg": "full stack",
+    "lv": "side project",
+    "repo": "https://github.com/naga251602/pricewatch",
+    "st": [
+      "Next.js",
+      "Supabase",
+      "PostgreSQL",
+      "Cheerio",
+      "Nodemailer",
+      "Tailwind CSS"
+    ],
+    "d": "A price drop tracker that scrapes product pages and emails you the moment a price hits your target.",
+    "dl": "- Cut response time to deals from hours to **under 60 seconds** with a Cheerio scraping pipeline that parses live prices and sends transactional emails through Nodemailer when a target price is hit.\n- Reduced redundant scrape requests **~40%** across 200+ tracked products with cross-user URL deduplication on hourly cron checks.\n- Secured the app with Supabase Auth (email/password and Google OAuth) and Row Level Security policies, plus a token-based one-click unsubscribe that needs no login.\n\nLive demo: [pricewatch-eight-rosy.vercel.app](https://pricewatch-eight-rosy.vercel.app/)"
+  },
+  {
+    "id": "gblog",
+    "t": "GBlog",
+    "tg": "full stack",
+    "lv": "side project",
+    "repo": "https://github.com/naga251602/gblog",
+    "st": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Data Structures"
+    ],
+    "d": "A static blogging platform that scores 95+ on Lighthouse, with a self-balancing AVL tree behind tag search.",
+    "dl": "- Scored **Lighthouse 95+** on mobile and desktop by combining Next.js SSG with Incremental Static Regeneration and on-demand revalidation through Supabase webhooks, serving pages in under 200ms.\n- Improved tag and category search from **O(n) to O(log n)** with a self-balancing AVL tree index over post metadata that rebalances on every content update."
+  },
+  {
+    "id": "supablog",
+    "t": "SupaBlog",
+    "tg": "backend",
+    "lv": "side project",
+    "repo": "https://github.com/naga251602/supablog",
+    "st": [
+      "Node.js",
+      "Express.js",
+      "EJS",
+      "Supabase",
+      "PostgreSQL",
+      "express-session",
+      "CSS"
+    ],
+    "d": "A server-rendered blog built with Node.js and Express, using Supabase for the database and sign-in.",
+    "dl": "- Built a full stack, server-rendered blogging platform with Node.js, Express and EJS templates, using Supabase for PostgreSQL and authentication.\n- Implemented sign-up, sign-in and logout with Supabase Auth and secure sessions through express-session, with protected routes for logged-in users.\n- Designed RESTful routes for creating, listing and viewing posts, with dotenv config and a consistent layout through express-ejs-layouts."
+  },
+  {
+    "id": "easymigrate",
+    "t": "EasyMigrate",
+    "tg": "tools",
+    "lv": "side project",
+    "repo": "https://github.com/naga251602/easymigrate",
+    "st": [
+      "Python",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "SQL Server",
+      "pytest"
+    ],
+    "d": "A pip-installable CLI that moves schema and data between any two SQL databases.",
+    "dl": "- Built an any-to-any database migration CLI that supports **6 SQL dialects** (PostgreSQL, MySQL, SQLite, SQL Server, MariaDB, OracleDB) with a single command.\n- Used SQLAlchemy's cross-dialect layer to read the source schema (tables, columns, views), recreate it on the target, and move the data, handling dialect differences behind the scenes.\n- Packaged it as a pip-installable Python CLI that only needs source and target connection URLs, with a pytest suite and an MIT License."
+  },
+  {
+    "id": "gchat",
+    "t": "GChat",
+    "tg": "real time",
+    "lv": "side project",
+    "repo": "https://github.com/naga251602/gchat",
+    "st": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Firestore",
+      "Tailwind CSS",
+      "ESLint"
+    ],
+    "d": "A real-time chat app with Google sign-in and live typing indicators.",
+    "dl": "- Delivered **sub-second message latency** with a Next.js App Router app, Firestore real-time listeners, Google OAuth and live typing indicators.\n- Split the code into chat UI, auth context and Firebase setup layers, with TypeScript types shared across the app and React Context for auth state.\n- Built a responsive, accessible UI with Tailwind CSS for mobile, tablet and desktop, with ESLint keeping the code consistent."
+  }
+]

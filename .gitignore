@@ -1,0 +1,105 @@
+
+# Dependencies
+/node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Next.js
+/.next/
+/out/
+/build/
+/dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Testing and coverage
+/coverage/
+/playwright-report/
+/test-results/
+.nyc_output/
+*.snap.tmp
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cert
+secrets/
+.secrets/
+
+# Vercel and deployment
+.vercel/
+.netlify/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.AppleDouble
+.LSOverride
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# Temporary files and caches
+.cache/
+.temp/
+.tmp/
+tmp/
+temp/
+*.bak
+*.orig
+*.swp
+
+# Python tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local archives
+*.zip
+*.tar
+*.tar.gz
+
+# Local audit artifacts
+/lighthouse-reports/
+/artifacts/
+/screenshots/
+
+# Keep source, documentation, and lockfiles tracked
+# context_router.md
+# AGENTS.md
+# design_norms/
+# rules/
+# migration/
+# content/
+# public/
+# package-lock.json

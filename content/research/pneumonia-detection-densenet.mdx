@@ -1,0 +1,37 @@
+---
+{
+  "slug": "pneumonia-detection-densenet",
+  "title": "Automated Pneumonia Detection using DenseNet",
+  "short": "Pneumonia detection",
+  "abstract": "A DenseNet-121 model that detects pneumonia in chest X-rays.",
+  "question": "How well does DenseNet detect pneumonia in chest X-rays compared with other common CNNs?",
+  "method": "Co-trained DenseNet-121 on the CheXpert chest X-ray dataset with augmentation and class weighting to handle label imbalance, and benchmarked it against ResNet-50 and VGG-16.",
+  "findings": "Reached 92% precision-recall AUC on the held-out test set. DenseNet beat the other models by 6% AUC, thanks to dense skip connections that let layers reuse features.",
+  "url": "https://link.springer.com/chapter/10.1007/978-981-96-6124-4_8",
+  "bibtex": "@inproceedings{venkataramanan2024pneumonia,\n  title={Automated Pneumonia Detection using DenseNet},\n  booktitle={ICCN 2024},\n  year={2024}\n}",
+  "skills": [
+    "Python",
+    "PyTorch",
+    "Computer vision",
+    "DenseNet"
+  ],
+  "venue": "ICCN 2024",
+  "year": "",
+  "award": "",
+  "citations": "",
+  "diagram": "",
+  "diagramCaption": ""
+}
+---
+
+## Research question
+
+How well does DenseNet detect pneumonia in chest X-rays compared with other common CNNs?
+
+## Method
+
+Co-trained DenseNet-121 on the CheXpert chest X-ray dataset with augmentation and class weighting to handle label imbalance, and benchmarked it against ResNet-50 and VGG-16.
+
+## Findings
+
+Reached 92% precision-recall AUC on the held-out test set. DenseNet beat the other models by 6% AUC, thanks to dense skip connections that let layers reuse features.

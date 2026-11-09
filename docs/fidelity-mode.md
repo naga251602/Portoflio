@@ -1,0 +1,3 @@
+# Fidelity compatibility mode
+
+The original UI lives in `public/legacy.html`, and `src/components/LegacyPortfolio/index.tsx` presents it. This retains the original CSS, layout and interactions but is **not** native React UI. Navigation uses validated `postMessage`, not direct parent/frame DOM access. The active HTML is patched only for safe navigation and profile proxy fallback. Original bytes are preserved in compressed `source/legacy-original.html.gz` for rollback. This architecture is temporary: excellent SEO requires server-rendered visible React content. Consult `context_router.md`, `rules/nextjs_crud.md`, `docs/security-audit.md` and `docs/seo-audit.md` before changes. Browser and live API parity are unverified until tested in a real deployment.

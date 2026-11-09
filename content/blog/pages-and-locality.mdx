@@ -1,0 +1,53 @@
+---
+{
+  "slug": "pages-and-locality",
+  "title": "A page is a useful boundary",
+  "date": "2026-10-19",
+  "tags": [
+    "storage",
+    "C++"
+  ],
+  "takeaways": [
+    "Pages are addressable units.",
+    "Choose page size against a measured workload."
+  ],
+  "summary": "# A page is a useful boundary  A short illustrative note about the 4 KB page choice in the Durable DB project.  > [!NOTE] > ==Keep the memory budget fixed when comparing page sizes.== Otherwise cache capacity can change alongside",
+  "project": "db",
+  "draft": false
+}
+---
+
+# A page is a useful boundary
+
+A short illustrative note about the 4 KB page choice in the Durable DB project.
+
+> [!NOTE]
+> ==Keep the memory budget fixed when comparing page sizes.== Otherwise cache capacity can change alongside the layout.
+
+## Bytes need structure
+
+A file is a sequence of bytes. A storage engine needs a predictable way to find records, validate them, and decide which bytes to cache.
+
+==A fixed-size page gives the storage engine an addressable unit.== A page identifier maps to an offset:
+
+$$offset = page\_id \times page\_size$$
+
+```cpp
+constexpr std::size_t page_size = 4096;
+const auto offset = page_id * page_size;
+// Real I/O must handle short reads, errors, and integer bounds.
+```
+
+## Locality changes the cost
+
+Nearby records can share a cached page. But larger pages may bring in data a query never uses. Smaller pages can add bookkeeping and more I/O operations.
+
+| Choice | Possible benefit | Possible cost |
+| --- | --- | --- |
+| Larger pages | More nearby records per read | More unused bytes per read |
+| Smaller pages | Less overfetch | More page lookups |
+
+## Measure the workload
+
+!!4 KB is a design choice, not a universal optimum.!! Compare point lookups and range scans under a fixed memory budget before choosing a page size for performance.
+
