@@ -15,7 +15,7 @@
     "check-legacy-js": "python3 scripts/check-legacy-js.py"
   },
   "dependencies": {
-    "next": "15.5.6",
+    "next": "15.5.9",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "next-mdx-remote": "5.0.0",
