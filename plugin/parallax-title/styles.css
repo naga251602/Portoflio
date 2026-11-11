@@ -1,0 +1,24 @@
+/* Usage: detail-header title animation, driven by plugin/parallax-title/index.js. */
+.detail-hero {
+  min-height: 340px;
+  overflow: visible;
+}
+.detail-title {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(33px, 7vw, 59px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  transform-origin: left center;
+  transform: translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0)
+             scale(var(--parallax-scale, 1));
+  opacity: var(--parallax-opacity, 1);
+  will-change: transform, opacity;
+}
+@media (max-width: 540px) {
+  .detail-hero { min-height: 290px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail-title { transform: none; opacity: 1; will-change: auto; }
+}

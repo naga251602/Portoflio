@@ -1,0 +1,20 @@
+/*
+ * Usage: Editorial section heading and spacing overrides.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+/* Isolated seven-section styling. Cards and links retain their v7 CSS and markup. */
+#intro + .portfolio-section{padding-top:38px}
+.portfolio-section{scroll-margin-top:30px}
+.section-editorial-head{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin-bottom:22px;padding-bottom:13px;border-bottom:1px solid #292930}
+.section-editorial-copy{min-width:0}
+.section-eyebrow{display:block;font:10px 'JetBrains Mono',monospace;letter-spacing:.10em;color:#b48952;margin-bottom:9px}
+.section-editorial-title{font-size:22px;font-weight:650;letter-spacing:-.04em;line-height:1.25;color:#e8e8ea}
+.section-editorial-head .view-all{font-size:11px;white-space:nowrap;margin-bottom:3px;color:#a4bed0}
+.section-editorial-head .view-all:hover{color:#f5a524}
+/* Match the vertical rhythm of the compact coding section, without restyling cards. */
+.portfolio-section+.portfolio-section{padding-top:58px}
+#main{padding-bottom:14px}
+@media(max-width:440px){.section-editorial-title{font-size:20px}.section-editorial-head{gap:10px}}
+
+/* Expanded related-entry tags in the skill detail panel */
+#skd .extra-skills.inline-flex{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px}

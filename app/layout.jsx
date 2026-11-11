@@ -1,0 +1,22 @@
+import '../styles/tailwind.generated.css';
+import '../styles/styles.css';
+import '../styles/coding-refined.css';
+import '../styles/sections-workspace.css';
+import '../styles/navbar-v72.css';
+import '../styles/collection-v72.css';
+import '../styles/components.css';
+import '../styles/ui-v75.css';
+import '../plugin/animated-notebook-output/styles.css';
+import '../plugin/architecture-diagram/styles.css';
+import '../plugin/code-viewer/styles.css';
+import '../plugin/common/styles.css';
+import '../plugin/globe/styles.css';
+import '../plugin/interactive-notebook-cell/styles.css';
+import '../plugin/parallax-title/styles.css';
+import '../plugin/screenshot-carousel/styles.css';
+import '../plugin/simulation-3d/styles.css';
+import '../plugin/single-screenshot/styles.css';
+import { Header, Footer, Background, SearchProvider } from '@/components/Shell';
+import { SkillProvider } from '@/components/SkillDock';
+export const metadata = { title: 'Gaurav N V | Software Engineer', description: 'Projects, research, contributions, and engineering notes.' };
+export default function RootLayout({ children }) { return <html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" /></head><body className="font-sans antialiased"><SearchProvider><SkillProvider><Background /><div className="relative z-10 mx-auto max-w-2xl px-6"><Header />{children}<Footer /></div></SkillProvider></SearchProvider></body></html> }

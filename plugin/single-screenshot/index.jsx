@@ -1,0 +1,5 @@
+'use client';
+import { useState } from 'react';
+/** Original image frame and intentionally labeled placeholder. */
+const valid = v => typeof v === 'string' && (/^\/(?!\/)/.test(v) || /^https:\/\//.test(v));
+export default function SingleScreenshot({ props = {} }) { const src = valid(props.src || props.image) ? props.src || props.image : null, [error, setError] = useState(false); if(!src || error) return <div className="demo-shell"><div className="demo-header"><span>SINGLE SCREENSHOT</span><span>SHOWCASE</span></div><div className="demo-body"><div className="fake-screen" style={{ minHeight: 145 }}><span>{error ? 'Image asset unavailable' : 'Screenshot not supplied'}</span></div><div className="demo-caption">{props.caption || 'Supply a real image path in the detail tuple to display it.'}</div></div></div>; return <figure className="demo-shell"><img src={src} alt={props.alt || props.heading || 'Project screenshot'} loading="lazy" decoding="async" onError={() => setError(true)} style={{ display: 'block', maxWidth: '100%', height: 'auto', borderRadius: 10 }} />{props.caption && <figcaption className="text-xs text-dim mt-2">{props.caption}</figcaption>}</figure> }

@@ -1,0 +1,13 @@
+/** Usage: v7.5 scoped filter, skill, Github and parallax refinements. */
+.filter-wrap{margin:20px 0 16px;position:relative}
+.filter-wrap .filter-row{margin:0;align-content:start}
+.filter-row .filter-pill[hidden],.detail-skill-tags > [hidden]{display:none!important}
+.filter-more,.detail-skill-more{display:inline-flex;margin-top:9px;align-items:center;border:1px solid #3a3430;background:#1b1918;color:#f5a524;border-radius:999px;padding:5px 12px;font:11px 'JetBrains Mono',monospace;cursor:pointer}
+.filter-more[hidden],.detail-skill-more[hidden]{display:none!important}
+.filter-more:hover,.detail-skill-more:hover{border-color:#f5a524}
+.detail-skill-wrap{margin:15px 0 6px}
+.detail-skill-tags{display:flex;flex-wrap:wrap;gap:8px;align-content:start}
+#skl .sk{cursor:pointer}
+#skl .sk:hover,#skl .sk:focus-visible{background:#211d18;color:#f5a524;outline:none;box-shadow:inset 2px 0 #f5a524}
+#coding .github-calendar-frame{scrollbar-width:thin;scroll-behavior:auto}
+@media(prefers-reduced-motion:reduce){}

@@ -1,0 +1,9 @@
+/*
+ * Usage: Styles shared by multiple UI components.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+/* Reusable primitives; rest of the original design remains in styles.css. */
+.component-modal{border:1px solid #303037;border-radius:14px;background:#111114;color:#e8e8ea;padding:22px;max-width:min(480px,90vw)}
+.component-modal::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(6px)}
+.component-modal h2{font-weight:600;margin-bottom:12px}
+.component-modal button{border:1px solid #303037;border-radius:8px;padding:7px 12px;margin-top:16px}

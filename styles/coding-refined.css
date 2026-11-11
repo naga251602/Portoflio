@@ -1,0 +1,69 @@
+/*
+ * Usage: Home coding-activity and hero contribution styling.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+/* Integrated refined homepage hero and coding UI. */
+#coding { scroll-margin-top:120px; }
+#coding .coding-page { padding-top:56px; }
+
+#main > section[hidden] { display:none !important; }
+
+/* Refined hero + coding section; original v7 base styles are preserved. */
+#intro .text-2xl{font-size:21px!important;line-height:1.4}
+#intro .sm\:text-3xl{font-size:21px!important}
+#intro .hero-link{font-size:11px}
+#intro .text-xs{font-size:10px}
+#intro .bg-\[\#e8e8ea\]{font-size:11px;padding:8px 13px}
+#intro .rounded-2xl.border-line.bg-card{padding:12px}
+#intro #clock{font-size:15px}
+#intro .text-sm{font-size:12px}
+.hero-notable{margin-top:22px}
+.hero-notable-label{display:block;font-size:10px;letter-spacing:.07em;color:#85858e;margin-bottom:9px}
+.hero-notable-row{display:flex;gap:8px;flex-wrap:wrap}
+.hero-notable-chip{display:inline-flex;align-items:center;gap:9px;padding:5px 10px 5px 5px;border:1px solid #36363e;border-radius:10px;font-size:12px;font-weight:600;background:#111114;color:#e8e8ea;transition:border-color .2s,transform .2s}
+.hero-notable-chip:hover{border-color:#b3884a;transform:translateY(-1px)}
+.hero-notable-chip svg{color:#a4bed0}
+.hero-notable-icon{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#24262d;font-size:17px}
+#coding .coding-page{padding:43px 0 65px}
+#coding .coding-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-end}
+#coding .coding-eyebrow{display:block;font:10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#b48952;margin-bottom:9px}
+#coding .coding-head h2{font-size:22px;font-weight:650;letter-spacing:-.04em;line-height:1.25}
+#coding .coding-head p{font-size:11px;line-height:1.6;color:#85858e;margin-top:6px}
+#coding .coding-head-link{font-size:11px;color:#a4bed0;white-space:nowrap;margin-bottom:3px}
+#coding .coding-head-link:hover{color:#f5a524}
+#coding .coding-profiles{gap:9px;margin:22px 0 24px;grid-template-columns:repeat(3,minmax(0,1fr))}
+#coding .coding-profile{display:block;padding:15px 13px;text-align:left;border:1px solid #292930;border-radius:12px;background:linear-gradient(160deg,#151518,#101013);transition:border-color .2s,transform .2s;min-width:0}
+#coding .coding-profile:hover{border-color:#9e7947;transform:translateY(-2px)}
+#coding .coding-profile-title{display:flex;justify-content:space-between;color:#a4bed0;font-size:11px;font-weight:500}
+#coding .coding-profile-title span:last-child{color:#777781}
+#coding .coding-rating{font-size:26px;line-height:1.15;font-weight:650;letter-spacing:-.05em;color:#e8e8ea;margin:13px 0 10px}
+#coding .coding-rating span{font:9px 'JetBrains Mono',monospace;color:#7f7f89;letter-spacing:0;margin-left:7px}
+#coding .coding-profile-meta{display:flex;gap:6px;justify-content:space-between;flex-wrap:wrap;font:10px 'JetBrains Mono',monospace;color:#92929c}
+#coding .coding-profile-date{display:block;margin-top:9px;font:9px 'JetBrains Mono',monospace;color:#666672}
+#coding .coding-activity{border:1px solid #2b2b32;border-radius:13px;padding:19px;background:#111114}
+#coding .coding-activity-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+#coding .coding-activity-head h3{font-size:14px;font-weight:650;color:#e8e8ea;margin:0}
+#coding .github-status{font:10px 'JetBrains Mono',monospace;color:#858590;line-height:1.65;margin:7px 0 0}
+#coding .coding-github-link{font-size:11px;white-space:nowrap}
+#coding .github-calendar-frame{margin-top:14px;overflow-x:auto;scrollbar-width:thin}
+#coding .github-heatmap{display:grid;grid-template-rows:repeat(7,9px);grid-auto-flow:column;grid-auto-columns:9px;gap:3px;width:max-content;min-height:81px;padding:0;margin:0}
+#coding .github-heatmap-unavailable{display:block;width:100%;font-size:11px;color:#777781;min-height:35px}
+#coding .contrib-day{width:9px;height:9px;border-radius:2px}
+#coding .heatmap-legend{display:flex;align-items:center;justify-content:flex-end;gap:4px;font:9px 'JetBrains Mono',monospace;color:#777781;margin-top:12px}
+#coding .heatmap-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;background:#222329}
+#coding .heatmap-legend i[data-level="1"]{background:#78603d}
+#coding .heatmap-legend i[data-level="2"]{background:#a27937}
+#coding .heatmap-legend i[data-level="3"]{background:#c5913e}
+#coding .heatmap-legend i[data-level="4"]{background:#f5a524}
+@media(max-width:440px){#coding .coding-profiles{grid-template-columns:1fr 1fr}#coding .coding-profile:last-child{grid-column:span 2}#coding .coding-head{align-items:flex-start}#intro .sm\:text-3xl{font-size:19px!important}}
+@media(prefers-reduced-motion:reduce){#coding .coding-profile,.hero-notable-chip{transition:none}#coding .coding-profile:hover,.hero-notable-chip:hover{transform:none}}
+
+/* v7.2: compact hero notable contribution badge */
+.hero-notable { margin-top: 14px; }
+.hero-notable-chip { padding: 3px 8px 3px 4px; gap: 6px; min-height: 30px; border-radius: 8px; font-size: 11px; }
+.hero-notable-icon { width: 22px; height: 22px; font-size: 13px; border-radius: 6px; }
+.hero-notable-chip svg { width: 12px; height: 12px; }
+
+/* Compact handoff from Coding to Projects: avoid stacking two section spacers. */
+#main > #coding .coding-page { padding-bottom: 14px; }
+#main > #coding + #work.portfolio-section { padding-top: 22px; }

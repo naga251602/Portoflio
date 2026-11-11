@@ -1,0 +1,6 @@
+/*
+ * Usage: Static input → processing → output schematic. Plugin-local appearance; loaded via index.html.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+
+.diagram svg{width:100%;height:auto;max-height:235px}

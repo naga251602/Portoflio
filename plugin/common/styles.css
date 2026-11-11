@@ -1,0 +1,8 @@
+/*
+ * Usage: Shared rich demo markup and CSS helpers. Plugin-local appearance; loaded via index.html.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+.demo-shell{margin:18px 0;border:1px solid #303036;background:#111114;border-radius:12px;overflow:hidden}
+.demo-header{padding:10px 14px;border-bottom:1px solid #2b2b31;display:flex;align-items:center;justify-content:space-between;font:10px 'JetBrains Mono',monospace;color:#9898a2;gap:9px}
+.demo-body{padding:15px}
+.demo-caption{font:10px 'JetBrains Mono',monospace;color:#777781;margin-top:9px}

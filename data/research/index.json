@@ -1,0 +1,208 @@
+[
+  {
+    "id": "iccds2024",
+    "title": "Sentiment-Based Drug Recommendation System",
+    "tag": "ICCDS 2024 | Citations: 3",
+    "intro": "Co-developed an NLP pipeline using fine-tuned BERT on domain-specific patient review corpora to classify sentiment and generate ranked drug recommendations at 88% classification accuracy.",
+    "skills": [
+      "Python",
+      "NLP",
+      "BERT"
+    ],
+    "is_featured": true,
+    "category": "research",
+    "status": "published",
+    "order": 1,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Overview",
+          "content": "Co-developed an NLP pipeline using fine-tuned BERT on domain-specific patient review corpora to classify sentiment and generate ranked drug recommendations at 88% classification accuracy.\n\nEvaluated against TF-IDF and LSTM baselines, demonstrating a 12-point F1 improvement from transfer learning with biomedical pretraining."
+        }
+      ],
+      [
+        "code-viewer",
+        {
+          "heading": "Citation (BibTeX)",
+          "language": "bibtex",
+          "code": "@inproceedings{venkataramanan2024sentiment,\n  title={Sentiment-Based Drug Recommendation System},\n  booktitle={ICCDS 2024},\n  year={2024}\n}"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "url": "https://www.researchgate.net/profile/Shai-Kumar/publication/394529865",
+    "citation": "@inproceedings{venkataramanan2024sentiment,\n  title={Sentiment-Based Drug Recommendation System},\n  booktitle={ICCDS 2024},\n  year={2024}\n}"
+  },
+  {
+    "id": "iccn2024",
+    "title": "Automated Pneumonia Detection using DenseNet",
+    "tag": "ICCN 2024",
+    "intro": "Co-trained DenseNet-121 on the CheXpert chest X-ray dataset with augmentation and class-weighting to handle label imbalance, achieving 92% precision-recall AUC on the held-out test set.",
+    "skills": [
+      "Python",
+      "Computer Vision",
+      "PyTorch",
+      "DenseNet"
+    ],
+    "is_featured": true,
+    "category": "research",
+    "status": "published",
+    "order": 2,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Overview",
+          "content": "Co-trained DenseNet-121 on the CheXpert chest X-ray dataset with augmentation and class-weighting to handle label imbalance, achieving 92% precision-recall AUC on the held-out test set.\n\nBenchmarked against ResNet-50 and VGG-16; DenseNet outperformed by 6% AUC via dense skip connections enabling richer feature reuse across layers."
+        }
+      ],
+      [
+        "code-viewer",
+        {
+          "heading": "Citation (BibTeX)",
+          "language": "bibtex",
+          "code": "@inproceedings{venkataramanan2024pneumonia,\n  title={Automated Pneumonia Detection using DenseNet},\n  booktitle={ICCN 2024},\n  year={2024}\n}"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "url": "https://link.springer.com/chapter/10.1007/978-981-96-6124-4_8",
+    "citation": "@inproceedings{venkataramanan2024pneumonia,\n  title={Automated Pneumonia Detection using DenseNet},\n  booktitle={ICCN 2024},\n  year={2024}\n}"
+  },
+  {
+    "title": "3D Loss Landscape & Model Laboratory",
+    "tag": "Interactive research",
+    "href": "",
+    "id": "3d-loss-landscape-model-laboratory",
+    "skills": [
+      "Machine Learning",
+      "Math",
+      "Visualization",
+      "Optimization",
+      "GAT"
+    ],
+    "is_featured": false,
+    "category": "research",
+    "my_contribution": "Designed the learning experiments and their interactive visual presentation.",
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "A notebook-style collection of optimization, neural activation, graph attention, and clustering visualizations."
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Problem Statement",
+          "content": "Dense equations alone can make optimization behavior and model dynamics difficult to understand."
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Performance Metrics",
+          "items": [
+            "Interactive visual studies",
+            "No formal benchmark or published evaluation provided"
+          ]
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Technical Innovations",
+          "items": [
+            "Visual loss landscapes",
+            "Neural activation experiments",
+            "Graph attention and clustering examples"
+          ]
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Business Impact",
+          "content": "Educational research showcase, not a peer-reviewed publication or commercial claim."
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Future Enhancements",
+          "items": [
+            "Add linked mathematical notes",
+            "Compare multiple optimization methods",
+            "Publish reproducible notebooks"
+          ]
+        }
+      ],
+      [
+        "interactive-notebook-cell",
+        {
+          "heading": "Notebook preview",
+          "caption": "Animation only; not executing Python code.",
+          "language": "python",
+          "code": "steps = 5\nloss = [1 / (i + 1) for i in range(steps)]\nprint([round(x, 3) for x in loss])",
+          "output": "[1.0, 0.5, 0.333, 0.25, 0.2]",
+          "execution": "replay"
+        }
+      ],
+      [
+        "simulation-3d",
+        {
+          "heading": "3D simulation",
+          "caption": "Procedural demonstration, not measured research results.",
+          "source": "module",
+          "module": "loss-landscape",
+          "parameters": {
+            "height": 1.6
+          }
+        }
+      ]
+    ],
+    "intro": "Interactive explanations of mathematical ideas behind machine learning.",
+    "status": "published",
+    "order": 3
+  },
+  {
+    "id": "human_ai",
+    "title": "Human-AI Collaboration for Backend Text Generation: Dynamic Content Recommendation for Websites based on Keywords",
+    "tag": "ICCDS 2024 | Best Paper, 3rd Place | Citations: 4",
+    "intro": "🏆 Awarded Best Paper, 3rd Place at the 2024 International Conference on Computing and Data Science.",
+    "skills": [
+      "Python",
+      "NLP",
+      "GPT"
+    ],
+    "is_featured": false,
+    "category": "research",
+    "status": "published",
+    "order": 4,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Overview",
+          "content": "🏆 Awarded Best Paper, 3rd Place at the 2024 International Conference on Computing and Data Science.\n\nCo-developed a keyword-driven content recommendation engine leveraging GPT-based AI pipelines to dynamically generate and personalize backend website copy, reducing manual authoring time by 60%.\n\nEvaluated system output quality against human-authored baselines through user studies with 40+ participants measuring coherence, relevance, and preference scores."
+        }
+      ],
+      [
+        "code-viewer",
+        {
+          "heading": "Citation (BibTeX)",
+          "language": "bibtex",
+          "code": "@inproceedings{venkataramanan2024humanai,\n  title={Human-AI Collaboration for Backend Text Generation},\n  booktitle={ICCDS 2024},\n  year={2024}\n}"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10560437",
+    "citation": "@inproceedings{venkataramanan2024humanai,\n  title={Human-AI Collaboration for Backend Text Generation},\n  booktitle={ICCDS 2024},\n  year={2024}\n}"
+  }
+]

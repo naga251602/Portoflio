@@ -1,0 +1,57 @@
+/*
+ * Usage: Collection-only card dimensions and Skills sidebar layout. 
+ * Homepage cards and global component markup are unaffected.
+ */
+#route-root .collection-grid {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  align-items: stretch;
+  gap: 18px;
+  margin-top: 24px;
+}
+#route-root .collection-grid .collection-card-wrap { display: flex; min-width: 0; width: 100%; }
+#route-root .collection-grid .collection-card-wrap > .compact-card {
+  width: 100%; min-width: 0; min-height: 395px; height: 100%;
+  display: flex; flex-direction: column; overflow: hidden;
+  border-radius: 14px;
+}
+/* Project image: fixed height, never squeezed by variable text. */
+#route-root .collection-grid .collection-card-wrap > .compact-card > .overflow-hidden {
+  flex: 0 0 188px;
+  height: 188px !important;
+  min-height: 188px;
+}
+#route-root .collection-grid .collection-card-wrap > .compact-card > .overflow-hidden img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+}
+/* Research and Others are intentionally image-free; stretch their content instead. */
+#route-root .collection-grid .collection-card-wrap > .compact-card > .research-content { flex: 1 1 auto; }
+#route-root .collection-grid .collection-card-wrap > .compact-card > div:last-child {
+  padding: 19px;
+  display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0;
+}
+#route-root .collection-grid .collection-card-wrap > .compact-card h3 {
+  font-size: 17px !important; line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+#route-root .collection-grid .collection-card-wrap > .compact-card p {
+  font-size: 13px !important; line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+#route-root .collection-grid .collection-card-wrap > .compact-card .card-actions { margin-top: auto; }
+#route-root .collection-grid .collection-card-wrap > .others-card {
+  min-height: 395px; padding: 0;
+}
+#route-root .exp-tree { gap: 32px; }
+#route-root .exp-tree .exp-timeline { min-height: 265px; }
+#skd .skill-related { margin-top: 9px; min-height: 0; display: flex; flex-direction: column; gap: 7px; }
+#skd .skill-related-list { display: flex; align-content: flex-start; flex-wrap: wrap; gap: 6px; min-height: 0; scrollbar-width: thin; }
+#skd .skill-related-tag { display: inline-flex; align-items: center; font: 10px 'JetBrains Mono',monospace; padding: 4px 8px; border: 1px solid #35353c; border-radius: 99px; color: #b2b2bc; text-decoration: none; }
+#skd .skill-related-tag:hover { color: #f5a524; border-color: #f5a524; }
+#skd .skill-related-tag[hidden], #skd #skd-more[hidden] { display: none !important; }
+#skd #skd-more { align-self: flex-start; flex-shrink: 0; }
+@media (max-width: 560px) {
+  #route-root .collection-grid { grid-template-columns: 1fr; gap: 15px; }
+  #route-root .collection-grid .collection-card-wrap > .compact-card { min-height: 0; }
+  #route-root .collection-grid .collection-card-wrap > .compact-card > .overflow-hidden { height: 210px !important; min-height: 210px; flex-basis: 210px; }
+  #route-root .exp-tree .exp-timeline { min-height: 230px; }
+}

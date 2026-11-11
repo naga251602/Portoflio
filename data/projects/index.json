@@ -1,0 +1,825 @@
+[
+  {
+    "title": "Durable DB — Persistent Storage Engine",
+    "tag": "Systems",
+    "href": "",
+    "code": "https://github.com/naga251602",
+    "id": "durable-db-persistent-storage-engine",
+    "skills": [
+      "C++",
+      "Linux",
+      "Storage",
+      "WAL",
+      "B+ Trees"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "my_contribution": "Designed the storage engine experiments and implemented file I/O and binary serialization prototypes.",
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Investigating page-oriented binary storage, file-backed reads and writes, write-ahead logging, indexing, and crash recovery."
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Problem Statement",
+          "content": "How can records remain reliably accessible when files are updated, processes stop unexpectedly, or the dataset outgrows memory?"
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Performance Metrics",
+          "items": [
+            "Page size: 4 KB (design parameter)",
+            "I/O experiments: pread / pwrite",
+            "Benchmark throughput and latency: not published"
+          ]
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Technical Innovations",
+          "items": [
+            "Page serialization and fixed-offset I/O",
+            "Separating logical keys from physical storage pages",
+            "WAL and recovery as planned reliability features"
+          ]
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Business Impact",
+          "content": "An educational storage-engine project; no production business impact has been claimed."
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Future Enhancements",
+          "items": [
+            "Complete WAL recovery tests",
+            "Add B+ tree indexing and a buffer pool",
+            "Benchmark random reads, writes, and crash recovery"
+          ]
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "Architecture diagram",
+          "note": "Illustrative layout, not a verified implementation diagram."
+        }
+      ],
+      [
+        "code-viewer",
+        {
+          "heading": "Code excerpt",
+          "language": "cpp",
+          "code": "// Illustrative page-read pattern\nstd::array<std::byte, 4096> page{};\nssize_t n = pread(fd, page.data(), page.size(), offset);\nif (n < 0) perror(\"pread\");",
+          "illustrative": true
+        }
+      ],
+      [
+        "single-screenshot",
+        {
+          "heading": "Single screenshot",
+          "caption": "Illustrative preview; replace with an actual project screenshot."
+        }
+      ],
+      [
+        "screenshot-carousel",
+        {
+          "heading": "Screenshot carousel",
+          "caption": "Illustrative frames; replace with project image assets."
+        }
+      ]
+    ],
+    "intro": "A hands-on C++ exploration of the persistence layer behind a database.",
+    "status": "published",
+    "order": 1
+  },
+  {
+    "title": "PulseFeed — Market Data Engine",
+    "tag": "Systems",
+    "href": "",
+    "code": "https://github.com/naga251602",
+    "id": "pulsefeed-market-data-engine",
+    "skills": [
+      "C++",
+      "Networking",
+      "Concurrency",
+      "TCP/UDP"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "my_contribution": "Engineering design and experimentation around networking, concurrency, and profiling.",
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Exploring TCP/UDP ingestion, queueing, and latency instrumentation with a systems-first design."
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Problem Statement",
+          "content": "How can a streaming engine ingest bursts without expensive contention or unpredictable end-to-end latency?"
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Performance Metrics",
+          "items": [
+            "Latency measurements: planned",
+            "Packet-rate benchmarking: planned"
+          ]
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Technical Innovations",
+          "items": [
+            "Network ingest layer",
+            "Queue and concurrency design",
+            "Per-stage timing instrumentation"
+          ]
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Business Impact",
+          "content": "Prototype and learning project; business outcomes have not been measured."
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Future Enhancements",
+          "items": [
+            "Add repeatable load tests",
+            "Compare queue implementations",
+            "Document latency distributions"
+          ]
+        }
+      ]
+    ],
+    "intro": "A low-latency market-data pipeline experiment in C++.",
+    "status": "published",
+    "order": 2
+  },
+  {
+    "id": "subletsafe",
+    "title": "SubletSafe | Verified Student Sublet Platform",
+    "tag": "Project",
+    "intro": "Processed $52,000+ in escrow-held payments across 140+ verified bookings with zero payment discrepancies, via an idempotent escrow state machine on Stripe Connect webhooks.",
+    "skills": [
+      "TypeScript",
+      "Next.js",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Stripe",
+      "Docker",
+      "GitHub Actions",
+      "AWS S3"
+    ],
+    "is_featured": true,
+    "category": "projects",
+    "status": "published",
+    "order": 1,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Processed $52,000+ in escrow-held payments across 140+ verified bookings with zero payment discrepancies, via an idempotent escrow state machine on Stripe Connect webhooks.\n\nHeld sub-120ms p95 latency at 500 concurrent users in k6 load tests, using Redis cache-aside, connection pooling, and composite PostgreSQL indexes.\n\nCut fraudulent listings to under 2% of submissions with .edu email verification and lease-document checks; hit 92% test coverage on payment-critical paths as merge-blocking GitHub Actions checks."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "Next.js Frontend",
+            "FastAPI Service & Escrow State Machine",
+            "PostgreSQL · Redis · Stripe Connect · AWS S3"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts"
+  },
+  {
+    "id": "coderoyale",
+    "title": "Code Royale | Real-Time Shader Battle Arena",
+    "tag": "Project",
+    "intro": "Sustained 1,000+ concurrent WebSocket connections on a single Go instance with sub-50ms keystroke broadcast latency, via a goroutine-per-room architecture with Redis pub/sub fan-out.",
+    "skills": [
+      "Go",
+      "TypeScript",
+      "React",
+      "WebGL",
+      "WebSockets",
+      "Redis",
+      "PostgreSQL",
+      "Kafka",
+      "OpenTelemetry",
+      "Nginx"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 101,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Sustained 1,000+ concurrent WebSocket connections on a single Go instance with sub-50ms keystroke broadcast latency, via a goroutine-per-room architecture with Redis pub/sub fan-out.\n\nRendered 8 live shader canvases at 60fps in one spectating view by streaming code diffs instead of full sources and batching WebGL canvas updates, with Kafka streaming match events and OpenTelemetry tracing room servers behind an Nginx WebSocket load balancer.\n\nRecovered 95%+ of dropped sessions mid-round without state loss, using server-authoritative timers and snapshot-based resync."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "React + WebGL Spectating Grid",
+            "Go Room Servers · Nginx WebSocket Load Balancer",
+            "Redis Pub/Sub · Kafka Events · PostgreSQL"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts"
+  },
+  {
+    "id": "palate",
+    "title": "Palate | Restaurant Bookmarking iOS App",
+    "tag": "Project",
+    "intro": "Built an iOS app on AWS Serverless that lets users bookmark restaurants by forwarding a WhatsApp text, IG reel, FB message, or email, automating multi-channel ingestion with no manual…",
+    "skills": [
+      "Swift",
+      "AWS Serverless",
+      "Supabase",
+      "OAuth/OTP",
+      "Maps",
+      "gRPC"
+    ],
+    "is_featured": true,
+    "category": "projects",
+    "status": "published",
+    "order": 2,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Built an iOS app on AWS Serverless that lets users bookmark restaurants by forwarding a WhatsApp text, IG reel, FB message, or email, automating multi-channel ingestion with no manual entry needed.\n\nBoosted restaurant bookmarking 70%+ and collapsed 5+ scattered apps into one by building maps, reminders, and directions natively, with OAuth/OTP handling secure sign-in."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "iOS App (Swift)",
+            "AWS Serverless Backend",
+            "WhatsApp · Instagram · Facebook · Email Ingestion"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/palate",
+    "media_references": [
+      "/demo_palate.gif"
+    ]
+  },
+  {
+    "id": "agentdesk",
+    "title": "AgentDesk | AI Support Agent with Evaluation Harness",
+    "tag": "Project",
+    "intro": "Achieved 82% correctness on a 200-item labeled test set by building a LangChain agent that answers only from company help docs and escalates cases below a 0.70 confidence threshold to…",
+    "skills": [
+      "Python",
+      "LangChain",
+      "FastAPI",
+      "PostgreSQL",
+      "React",
+      "OpenTelemetry"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 103,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Achieved 82% correctness on a 200-item labeled test set by building a LangChain agent that answers only from company help docs and escalates cases below a 0.70 confidence threshold to humans.\n\nReached 88% grounding by tracing agent, retrieval, and API calls with OpenTelemetry to flag unsupported answers before release."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "React Console",
+            "FastAPI · LangChain Agent · Escalation at 0.70 Confidence",
+            "PostgreSQL Help Docs · OpenTelemetry Traces"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts"
+  },
+  {
+    "id": "secondbrain",
+    "title": "SecondBrain | Personal Knowledge RAG Engine",
+    "tag": "Project",
+    "intro": "Reached 85% recall@5 across ~3,000 indexed chunks of 512 tokens by embedding PDFs, notes, and web links with sentence-transformers into pgvector on PostgreSQL.",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "sentence-transformers",
+      "pgvector",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 104,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Reached 85% recall@5 across ~3,000 indexed chunks of 512 tokens by embedding PDFs, notes, and web links with sentence-transformers into pgvector on PostgreSQL.\n\nDelivered retrieval in ~120ms and made repeat queries ~3x faster by caching results in Redis and returning answers grounded in cited passages."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "PDFs · Notes · Web Links",
+            "Chunking · sentence-transformers Embeddings",
+            "pgvector on PostgreSQL · Redis Cache · FastAPI"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts"
+  },
+  {
+    "id": "modelforge",
+    "title": "ModelForge | LLM Fine-Tuning and Deployment Pipeline",
+    "tag": "Project",
+    "intro": "Raised task accuracy to 84% by LoRA fine-tuning a 7B-class Hugging Face model on a labeled task dataset, tracking experiments and model versions in MLflow.",
+    "skills": [
+      "Python",
+      "Hugging Face",
+      "LoRA/PEFT",
+      "MLflow",
+      "AWS Bedrock",
+      "Docker"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 105,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Raised task accuracy to 84% by LoRA fine-tuning a 7B-class Hugging Face model on a labeled task dataset, tracking experiments and model versions in MLflow.\n\nServed inference at ~400ms latency by deploying to AWS Bedrock via custom model import, gating each release on an eval set and monitoring live endpoints."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "Labeled Task Dataset",
+            "LoRA Fine-Tuning · MLflow Tracking · Eval Gate",
+            "AWS Bedrock Custom Model Import · Monitored Inference"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts"
+  },
+  {
+    "id": "aistora",
+    "title": "AIStora | Full-Stack Analytics Platform",
+    "tag": "Project",
+    "intro": "Outperformed Pandas 3× on sort, group-by, and join operations across 100K+ row datasets by architecting an in-memory columnar query engine in Python using Apache Arrow, delivering…",
+    "skills": [
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "Apache Arrow",
+      "Docker",
+      "GitHub Actions",
+      "React",
+      "JWT"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 106,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Outperformed Pandas 3× on sort, group-by, and join operations across 100K+ row datasets by architecting an in-memory columnar query engine in Python using Apache Arrow, delivering sub-second filtering and aggregation.\n\nShipped a production-grade Flask REST API with JWT auth and RBAC for secure multi-tenant querying, backed by PostgreSQL with per-user schema isolation. Containerized via Docker Compose with 85% test coverage and automated CI/CD via GitHub Actions.\n\nBuilt a React dashboard with Recharts enabling non-technical users to query and visualize large datasets without writing SQL — closing the loop from raw data to insight in under 3 clicks."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "PostgreSQL Database",
+            "Flask API & Columnar Engine",
+            "React Dashboard"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/aistora",
+    "media_references": [
+      "/demo_aistora.gif"
+    ]
+  },
+  {
+    "id": "graphql",
+    "title": "GraphQL Task Management API",
+    "tag": "Project",
+    "intro": "Held sub-100ms p99 latency at 1,000+ concurrent WebSocket connections by designing a schema-first GraphQL API with FastAPI and Strawberry, integrating Redis DataLoader batching to…",
+    "skills": [
+      "FastAPI",
+      "GraphQL",
+      "Strawberry",
+      "Redis",
+      "Python",
+      "OAuth 2.0",
+      "WebSockets"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 107,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Held sub-100ms p99 latency at 1,000+ concurrent WebSocket connections by designing a schema-first GraphQL API with FastAPI and Strawberry, integrating Redis DataLoader batching to eliminate N+1 query overhead.\n\nReduced average payload size 60% on deeply nested task/subtask queries versus equivalent REST endpoints, with OAuth 2.0 PKCE flow handling auth across the full connection lifecycle."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "FastAPI + Strawberry GraphQL",
+            "Redis DataLoader Batching",
+            "1K+ Concurrent WebSockets"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/todo-graphql"
+  },
+  {
+    "id": "ipl_predictor",
+    "title": "Deep Neural Net IPL Predictor | Multi-Modal Win Forecasting",
+    "tag": "Project",
+    "intro": "Achieved 80% test accuracy on 2025 IPL match outcomes by building a multi-modal deep learning framework integrating performance data from 13 cricket leagues across 235 players, with…",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Flask",
+      "Graph Attention Networks",
+      "Monte Carlo Simulation",
+      "React",
+      "SHAP"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 108,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Achieved 80% test accuracy on 2025 IPL match outcomes by building a multi-modal deep learning framework integrating performance data from 13 cricket leagues across 235 players, with league-quality weighting and recency decay.\n\nDesigned a Dynamic OVR rating system (55–97 scale) feeding a 4-source weighted attention transformer with learnable fusion weights, capturing phase-specific batting (Top Order, Middle, Finisher) and bowling (Powerplay, Middle, Death) performance.\n\nBoosted reliability to a Brier score of 0.24 by combining a 2-layer Graph Attention Network modeling batter-bowler matchup asymmetries with a 10,000-iteration Monte Carlo simulation engine, deployed as a Flask API with SHAP explainability at sub-2s latency."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "13-League Data Pipeline",
+            "Dynamic OVR Ratings",
+            "GAT + Monte Carlo Engine"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/Nikhilr-28/Deep-Neural-Network-IPL-Prediction",
+    "media_references": [
+      "/demo_ipl.png",
+      "/demo_ipl.png"
+    ]
+  },
+  {
+    "id": "pricewatch",
+    "title": "PriceWatch | Automated Price Drop Tracker with Email Alerts",
+    "tag": "Project",
+    "intro": "Cut user response time to deals from hours to under 60 seconds by building a Cheerio-based scraping pipeline that parses live product prices and fires instant transactional emails via…",
+    "skills": [
+      "Next.js",
+      "Supabase",
+      "PostgreSQL",
+      "Cheerio",
+      "Nodemailer",
+      "Tailwind CSS"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 109,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Cut user response time to deals from hours to under 60 seconds by building a Cheerio-based scraping pipeline that parses live product prices and fires instant transactional emails via Nodemailer the moment a target price hits.\n\nReduced redundant scrape requests ~40% across 200+ tracked products by implementing cross-user URL deduplication on hourly cron checks, lowering infrastructure cost without sacrificing freshness.\n\nSecured the platform with Supabase Auth (email/password + Google OAuth) and Row Level Security policies, plus a token-based one-click unsubscribe flow requiring no login."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "Product URL + Target Price",
+            "Cheerio Scraper + Cron",
+            "Email Alert + Unsubscribe"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/pricewatch",
+    "href": "https://pricewatch-eight-rosy.vercel.app/",
+    "media_references": [
+      "/demo_pricewatch.gif"
+    ]
+  },
+  {
+    "id": "orilix",
+    "title": "Orilix | AI-Powered Dental Patient Management",
+    "tag": "Project",
+    "intro": "Cut patient intake time ~70% across 3 clinic workflows by building unique per-patient sharable onboarding questionnaire links that auto-populate the day's visitor list on submission.",
+    "skills": [
+      "Flask",
+      "Firebase",
+      "Three.js",
+      "Python",
+      "JavaScript"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 110,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Cut patient intake time ~70% across 3 clinic workflows by building unique per-patient sharable onboarding questionnaire links that auto-populate the day's visitor list on submission.\n\nReduced manual charting time 60% (~15 min per appointment) by combining voice notes with AI-generated SOAP note summarization, eliminating documentation friction for clinicians.\n\nEngineered an interactive 3D dental model in Three.js for in-app note-taking directly on tooth surfaces, with Firebase as the real-time backend for patient data and authentication."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "Firebase Auth & DB",
+            "Flask API + AI Summarization",
+            "Three.js 3D Dental Model"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/orilix"
+  },
+  {
+    "id": "gblog",
+    "title": "GBlog | Static Blogging Platform",
+    "tag": "Project",
+    "intro": "Achieved Lighthouse 95+ scores on mobile and desktop by combining Next.js SSG with Incremental Static Regeneration and on-demand revalidation via Supabase Webhooks, serving pages in…",
+    "skills": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Data Structures"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 111,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Achieved Lighthouse 95+ scores on mobile and desktop by combining Next.js SSG with Incremental Static Regeneration and on-demand revalidation via Supabase Webhooks, serving pages in under 200ms.\n\nImproved tag and category search from O(n) to O(log n) by implementing a self-balancing AVL tree index over post metadata, with automatic rebalancing on every content update."
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/gblog",
+    "media_references": [
+      "/demo_gblog.png"
+    ]
+  },
+  {
+    "id": "supablog",
+    "title": "SupaBlog | Node.js Blog Platform",
+    "tag": "Project",
+    "intro": "Built a full-stack server-rendered blogging platform using Node.js and Express with EJS templating, integrating Supabase as a backend-as-a-service for PostgreSQL database management and…",
+    "skills": [
+      "Node.js",
+      "Express.js",
+      "EJS",
+      "Supabase",
+      "PostgreSQL",
+      "express-session",
+      "CSS"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 112,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Built a full-stack server-rendered blogging platform using Node.js and Express with EJS templating, integrating Supabase as a backend-as-a-service for PostgreSQL database management and authentication.\n\nImplemented a complete user authentication system using Supabase Auth with secure session management via express-session, supporting sign-up, sign-in, and logout flows with protected routes for authenticated users.\n\nDesigned RESTful routes for full CRUD blog post operations — create, list, and view — with environment-based configuration via dotenv and consistent UI structure using express-ejs-layouts."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "Supabase Auth & PostgreSQL",
+            "Express.js REST Routes",
+            "EJS Server-Rendered Views"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/supablog"
+  },
+  {
+    "id": "easymigrate",
+    "title": "EasyMigrate | Universal Database Migration Tool",
+    "tag": "Project",
+    "intro": "Built a universal any-to-any database migration CLI tool supporting 6 SQL dialects (PostgreSQL, MySQL, SQLite, SQL Server, MariaDB, OracleDB), enabling cross-database schema and data…",
+    "skills": [
+      "Python",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "SQL Server",
+      "pytest"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 113,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Built a universal any-to-any database migration CLI tool supporting 6 SQL dialects (PostgreSQL, MySQL, SQLite, SQL Server, MariaDB, OracleDB), enabling cross-database schema and data transfer through a single command.\n\nLeveraged SQLAlchemy's cross-dialect abstraction layer to extract source schema (tables, columns, views), recreate it on the target, and faithfully transfer data — handling dialect differences transparently under the hood.\n\nPackaged as a pip-installable Python CLI with a minimal interface (just source and target connection URLs), pytest test suite, and open for community contributions under the MIT License."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "Source Database (any)",
+            "SQLAlchemy Migration Engine",
+            "Target Database (any)"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/easymigrate"
+  },
+  {
+    "id": "gchat",
+    "title": "GChat | Real-Time Messaging App",
+    "tag": "Project",
+    "intro": "Delivered sub-second message latency by architecting a Next.js App Router app with Firestore real-time listeners, Google OAuth authentication, and live typing indicators.",
+    "skills": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Firestore",
+      "Tailwind CSS",
+      "ESLint"
+    ],
+    "is_featured": false,
+    "category": "projects",
+    "status": "published",
+    "order": 114,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Project Overview",
+          "content": "Delivered sub-second message latency by architecting a Next.js App Router app with Firestore real-time listeners, Google OAuth authentication, and live typing indicators.\n\nBuilt a modular component structure separating chat UI, auth context, and Firebase initialization layers, with full TypeScript type safety across shared interfaces and React Context-based auth state management.\n\nDesigned a fully responsive, WCAG-compliant accessible UI with Tailwind CSS optimized across mobile, tablet, and desktop, enforced by ESLint for consistent code quality throughout the codebase."
+        }
+      ],
+      [
+        "architecture-diagram",
+        {
+          "heading": "System Architecture",
+          "nodes": [
+            "Firebase Auth (Google)",
+            "Firestore Real-Time Listeners",
+            "Next.js App Router UI"
+          ],
+          "note": "Architecture outline supplied by data.ts"
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "code": "https://github.com/naga251602/gchat"
+  }
+]

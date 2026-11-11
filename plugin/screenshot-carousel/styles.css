@@ -1,0 +1,7 @@
+/*
+ * Usage: Three-frame illustrative screenshot carousel. Plugin-local appearance; loaded via index.html.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+.demo-nav{display:flex;gap:8px}
+.demo-nav button{border:1px solid #414149;border-radius:6px;padding:3px 9px;color:#e8e8ea;font-size:11px}
+.demo-nav button:hover{border-color:#f5a524;color:#f5a524}

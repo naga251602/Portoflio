@@ -1,0 +1,7 @@
+/*
+ * Usage: Illustrative one-image demonstration panel. Plugin-local appearance; loaded via index.html.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+.fake-screen{min-height:190px;background:radial-gradient(ellipse at 60% 40%,#302516,#141419 65%);display:grid;place-items:center;position:relative;overflow:hidden}
+.fake-screen::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 27px,#ffffff08 28px 29px),repeating-linear-gradient(90deg,transparent 0 27px,#ffffff08 28px 29px)}
+.fake-screen span{font:12px 'JetBrains Mono',monospace;color:#e8bd7d;position:relative;text-align:center;padding:12px}

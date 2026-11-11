@@ -1,0 +1,1 @@
+Place trusted `.glb` or `.gltf` files here. Refer to them with `source: "model", asset: "assets/models/your-file.glb"` inside a `simulation-3d` details tuple. No real model assets have been supplied with this portfolio.

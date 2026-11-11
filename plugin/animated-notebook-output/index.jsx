@@ -1,0 +1,4 @@
+'use client';
+import { useEffect, useRef, useState } from 'react';
+/** v7.7 saved output replay. */
+export default function AnimatedNotebookOutput({ props = {} }) { const [text, setText] = useState('Run to replay saved output'), timer = useRef(null); useEffect(() => () => clearTimeout(timer.current), []); const replay = () => { clearTimeout(timer.current); setText('Executing saved cell…'); timer.current = setTimeout(() => setText(typeof props.output === 'string' ? props.output : JSON.stringify(props.output ?? 'No saved output configured.', null, 2)), 700) }; return <div className="demo-shell"><div className="demo-header">OUTPUT / SAVED RESULT</div><div className="demo-body"><button type="button" className="run-btn" onClick={replay}>▶ Replay output</button><pre className="notebook-output" aria-live="polite">{text}</pre></div></div> }

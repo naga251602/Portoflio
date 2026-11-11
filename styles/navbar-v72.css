@@ -1,0 +1,76 @@
+/*
+ * Usage: v7.2 minimal transparent sticky navbar; icons are self-hosted, solid SVG assets.
+ * No filled nav states, tint overlay, decorative underline, or transition effects.
+ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  margin: 0 -24px;
+  padding: 12px 24px 10px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.site-nav .font-mono.shrink-0 { font-size: 14px !important; font-weight: 500; letter-spacing: normal; }
+.nav-anchors {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  margin: 0;
+}
+.nav-anchors a,
+.nav-anchors a:hover,
+.nav-anchors a[aria-current="true"] {
+  color: #b4b4bc !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  transition: none !important;
+}
+.nav-anchors a::after { display: none !important; }
+#top { gap: 7px; }
+#top .nav-social {
+  width: 34px !important;
+  height: 34px !important;
+  border: 1px solid #34343b !important;
+  border-radius: 9px;
+  background: transparent !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #b8b8c1;
+  transition: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  padding: 7px;
+}
+#top .nav-social img, #top .nav-social svg {
+  display: block;
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px;
+  object-fit: contain;
+}
+#top .nav-social svg { fill: #b8b8c1; }
+#top .nav-social img { filter: invert(.72); }
+#top .nav-social:focus-visible, .nav-anchors a:focus-visible {
+  outline: 2px solid #f5a524;
+  outline-offset: 2px;
+}
+.site-nav .mt-3.rounded-xl { background: transparent !important; border-color: #303037; }
+.site-nav input#s { font-size: 12px !important; }
+@media (max-width: 540px) {
+  .site-nav { padding: 10px 24px; }
+  #top .nav-social { width: 31px !important; height: 31px !important; }
+  .nav-anchors a { font-size: 11px !important; }
+}

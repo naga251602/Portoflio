@@ -1,0 +1,6 @@
+/*
+ * Usage: Run-button animation for saved output. Plugin-local appearance; loaded via index.html.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+
+.notebook-output{margin-top:12px;padding:13px;background:#0d1011;border:1px solid #2a3532;border-radius:8px;font:11px/1.7 'JetBrains Mono',monospace;color:#96c8a4;white-space:pre-wrap}

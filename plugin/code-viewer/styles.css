@@ -1,0 +1,6 @@
+/*
+ * Usage: Read-only code block with copy button. Plugin-local appearance; loaded via index.html.
+ * Edit guidance: see /llm-guide.md; preserve public exports, IDs and class hooks.
+ */
+
+.code-sample{font:11px/1.8 'JetBrains Mono',monospace;color:#b9cae1;padding:15px;white-space:pre;overflow-x:auto;background:#0c0c10}

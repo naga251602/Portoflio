@@ -1,0 +1,5 @@
+/** Dedicated About page with the exact editorial headings and education accordions of v7.7. */
+import Link from 'next/link';
+import { ABOUT } from '@/config/about';
+export const metadata = { title: 'About | Gaurav N V' };
+export default function About() { return <main id="route-root"><div className="about-page"><Link className="back-link" href="/#intro">← Back to portfolio</Link><h1 className="about-display"><span>ABOUT ME</span></h1><div className="about-copy">{ABOUT.introduction.map((text, i) => <p key={i}>{text}</p>)}</div><h2 className="about-display"><span>EDUCATION</span></h2>{ABOUT.education.map((entry, i) => <section className="edu-entry" key={i}><h3>{entry.school}</h3><p className="edu-degree">{entry.degree} | {entry.period}</p>{entry.groups.map((group, j) => <details className="edu-accordion" key={j}><summary>{group.title} <span>⌄</span></summary><ul>{group.items.length ? group.items.map((x, k) => <li key={k}>{x}</li>) : <li>No details added yet.</li>}</ul></details>)}</section>)}</div></main> }

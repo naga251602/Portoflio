@@ -1,0 +1,231 @@
+{
+  "Languages": [
+    {
+      "name": "Python",
+      "icon": "devicon-python-plain",
+      "level": 95
+    },
+    {
+      "name": "Go",
+      "icon": "devicon-go-plain",
+      "level": 85
+    },
+    {
+      "name": "TypeScript",
+      "icon": "devicon-typescript-plain",
+      "level": 90
+    },
+    {
+      "name": "JavaScript",
+      "icon": "devicon-javascript-plain",
+      "level": 90
+    },
+    {
+      "name": "SQL",
+      "icon": "devicon-sqldeveloper-plain",
+      "level": 90
+    },
+    {
+      "name": "Java",
+      "icon": "devicon-java-plain",
+      "level": 85
+    },
+    {
+      "name": "C++",
+      "icon": "devicon-cplusplus-plain",
+      "level": 75
+    }
+  ],
+  "Backend": [
+    {
+      "name": "FastAPI",
+      "icon": "devicon-fastapi-plain",
+      "level": 90
+    },
+    {
+      "name": "Spring Boot",
+      "icon": "devicon-spring-plain",
+      "level": 85
+    },
+    {
+      "name": "Flask",
+      "icon": "devicon-flask-original",
+      "level": 85
+    },
+    {
+      "name": "Node.js",
+      "icon": "devicon-nodejs-plain",
+      "level": 80
+    },
+    {
+      "name": "GraphQL",
+      "icon": "devicon-graphql-plain",
+      "level": 85
+    },
+    {
+      "name": "REST APIs",
+      "icon": "fa-code",
+      "isFa": true,
+      "level": 95
+    },
+    {
+      "name": "WebSockets",
+      "icon": "fa-bolt",
+      "isFa": true,
+      "level": 80
+    },
+    {
+      "name": "JWT",
+      "icon": "fa-shield-halved",
+      "isFa": true,
+      "level": 85
+    }
+  ],
+  "Frontend": [
+    {
+      "name": "React",
+      "icon": "devicon-react-original",
+      "level": 90
+    },
+    {
+      "name": "Next.js",
+      "icon": "devicon-nextjs-plain",
+      "level": 90
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "devicon-tailwindcss-plain",
+      "level": 90
+    },
+    {
+      "name": "HTML/CSS",
+      "icon": "devicon-html5-plain",
+      "level": 95
+    }
+  ],
+  "Databases": [
+    {
+      "name": "PostgreSQL",
+      "icon": "devicon-postgresql-plain",
+      "level": 90
+    },
+    {
+      "name": "MySQL",
+      "icon": "devicon-mysql-plain",
+      "level": 85
+    },
+    {
+      "name": "MongoDB",
+      "icon": "devicon-mongodb-plain",
+      "level": 80
+    },
+    {
+      "name": "Redis",
+      "icon": "devicon-redis-plain",
+      "level": 85
+    },
+    {
+      "name": "SQLite",
+      "icon": "devicon-sqlite-plain",
+      "level": 80
+    }
+  ],
+  "Infrastructure": [
+    {
+      "name": "Docker",
+      "icon": "devicon-docker-plain",
+      "level": 85
+    },
+    {
+      "name": "Kubernetes",
+      "icon": "devicon-kubernetes-plain",
+      "level": 70
+    },
+    {
+      "name": "AWS",
+      "icon": "devicon-amazonwebservices-plain-wordmark",
+      "level": 80
+    },
+    {
+      "name": "GitHub Actions",
+      "icon": "devicon-githubactions-plain",
+      "level": 85
+    },
+    {
+      "name": "Linux",
+      "icon": "devicon-linux-plain",
+      "level": 90
+    },
+    {
+      "name": "Nginx",
+      "icon": "devicon-nginx-original",
+      "level": 80
+    }
+  ],
+  "ML / Data": [
+    {
+      "name": "PyTorch",
+      "icon": "devicon-pytorch-plain",
+      "level": 80
+    },
+    {
+      "name": "Pandas",
+      "icon": "devicon-pandas-plain",
+      "level": 90
+    },
+    {
+      "name": "scikit-learn",
+      "icon": "devicon-scikitlearn-plain",
+      "level": 85
+    },
+    {
+      "name": "NumPy",
+      "icon": "devicon-numpy-plain",
+      "level": 90
+    },
+    {
+      "name": "BERT",
+      "icon": "fa-brain",
+      "isFa": true,
+      "level": 80
+    },
+    {
+      "name": "DenseNet",
+      "icon": "fa-network-wired",
+      "isFa": true,
+      "level": 80
+    }
+  ],
+  "Core": [
+    {
+      "name": "System Design",
+      "icon": "fa-layer-group",
+      "isFa": true,
+      "level": 85
+    },
+    {
+      "name": "Concurrency",
+      "icon": "fa-code-branch",
+      "isFa": true,
+      "level": 90
+    },
+    {
+      "name": "Performance Optimization",
+      "icon": "fa-gauge-high",
+      "isFa": true,
+      "level": 90
+    },
+    {
+      "name": "Data Structures",
+      "icon": "fa-database",
+      "isFa": true,
+      "level": 95
+    },
+    {
+      "name": "Algorithms",
+      "icon": "fa-microchip",
+      "isFa": true,
+      "level": 95
+    }
+  ]
+}

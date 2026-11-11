@@ -1,0 +1,210 @@
+[
+  {
+    "role": "Software Engineer Intern",
+    "org": "Aadithya Cars",
+    "period": "Apr 2024 - Nov 2024",
+    "bullets": [
+      "Improved initial page-load performance from 3.2s to 800ms using lazy loading, code splitting, and Brotli compression.",
+      "Built a chunk-based ingestion pipeline for 500K+ inventory rows, scaling data handling 4×.",
+      "Worked on PySpark processing, SQL indexes, and microservices features."
+    ],
+    "id": "software-engineer-intern",
+    "skills": [
+      "Python",
+      "SQL",
+      "PySpark"
+    ],
+    "is_featured": false,
+    "category": "experience",
+    "my_contribution": "Worked on performance optimization, ingestion pipelines, PySpark processing, SQL tuning, and end-to-end backend feature delivery.",
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Role Overview",
+          "content": "Built and improved frontend delivery, inventory processing, PySpark data workflows, SQL queries, and microservices features at Aadithya Cars."
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Problem Statement",
+          "content": "Large inventory datasets and expensive page loads made responsiveness, processing capacity, and query execution important engineering constraints."
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Performance Metrics",
+          "items": [
+            "Initial page load: 3.2s → 800ms (75% improvement)",
+            "Inventory pipeline: 500K+ rows and 4× handling scale",
+            "SQL query performance: 35% improvement"
+          ]
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Technical Innovations",
+          "items": [
+            "Lazy loading, code splitting and Brotli compression",
+            "Chunk-based streaming inventory ingestion",
+            "Composite indexes and schema optimization"
+          ]
+        }
+      ],
+      [
+        "text",
+        {
+          "heading": "Business Impact",
+          "content": "Improved application responsiveness and reduced out-of-memory failures in large inventory processing."
+        }
+      ],
+      [
+        "list",
+        {
+          "heading": "Future Enhancements",
+          "items": [
+            "Expand regression and throughput benchmarks",
+            "Track production performance across releases"
+          ]
+        }
+      ]
+    ],
+    "intro": "Software engineering internship with a focus on performance and large-scale vehicle inventory processing.",
+    "status": "published",
+    "order": 0
+  },
+  {
+    "id": "virtusa_2",
+    "title": "Software Engineering Intern",
+    "tag": "Virtusa • Dec 2023 - Apr 2024",
+    "intro": "Cut manual stock discrepancy errors ~40% as sole backend owner of the EMart Inventory Management System (Spring Boot, Angular, MySQL), coordinating 3 engineers and shipping real-time…",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "Spring AOP",
+      "Hibernate",
+      "Angular",
+      "MySQL",
+      "REST APIs"
+    ],
+    "is_featured": false,
+    "category": "experience",
+    "status": "published",
+    "order": 101,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Overview",
+          "content": "Cut manual stock discrepancy errors ~40% as sole backend owner of the EMart Inventory Management System (Spring Boot, Angular, MySQL), coordinating 3 engineers and shipping real-time stock tracking, expiry alerting 2–3 days in advance, and a maker-checker approval workflow.\n        \nReduced invoice processing from ~2 days to same-day by building a SHA-256 validated CSV ingestion pipeline across 3 backend modules (Public Employment Center, Tamil Nadu EB Bill System, barcode generation), auto-generating signed PDF invoices emailed to vendors."
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "role": "Software Engineering Intern",
+    "org": "Virtusa",
+    "period": "Dec 2023 - Apr 2024"
+  },
+  {
+    "id": "rmk_ra",
+    "title": "Research Assistant",
+    "tag": "R.M.K Engineering College • Sep 2023 - Apr 2024",
+    "intro": "Co-authored 3 IEEE conference papers by implementing Python backend systems integrating sentiment analysis, text generation, and DenseNet medical image classification models — with one…",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Machine Learning",
+      "NLP",
+      "Computer Vision"
+    ],
+    "is_featured": false,
+    "category": "experience",
+    "status": "published",
+    "order": 102,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Overview",
+          "content": "Co-authored 3 IEEE conference papers by implementing Python backend systems integrating sentiment analysis, text generation, and DenseNet medical image classification models — with one paper winning Best Paper, 3rd Place at ICCDS 2024.\n        \nBuilt data ingestion and preprocessing pipelines supporting 3 ML research projects under faculty supervision, contributing to experimental evaluation and manuscript preparation across 7 total citations."
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "role": "Research Assistant",
+    "org": "R.M.K Engineering College",
+    "period": "Sep 2023 - Apr 2024"
+  },
+  {
+    "id": "virtusa_1",
+    "title": "Software Engineering Intern",
+    "tag": "Virtusa • Jul 2022 - Aug 2022",
+    "intro": "Delivered a full-stack e-commerce grocery platform (Spring MVC, Angular 9+, MySQL) end-to-end in 6 weeks as team lead of 3, covering product catalog, cart, checkout, and order management…",
+    "skills": [
+      "Java",
+      "Spring MVC",
+      "Spring Security",
+      "Hibernate",
+      "Angular",
+      "MySQL",
+      "REST APIs",
+      "Bootstrap"
+    ],
+    "is_featured": false,
+    "category": "experience",
+    "status": "published",
+    "order": 103,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Overview",
+          "content": "Delivered a full-stack e-commerce grocery platform (Spring MVC, Angular 9+, MySQL) end-to-end in 6 weeks as team lead of 3, covering product catalog, cart, checkout, and order management across 5 core user flows.\n        \nEngineered 8 REST endpoints with Hibernate ORM and Spring Security, holding sub-3s page load under simulated 50-user load during final demo review."
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "role": "Software Engineering Intern",
+    "org": "Virtusa",
+    "period": "Jul 2022 - Aug 2022"
+  },
+  {
+    "id": "sawbon",
+    "title": "Software Development Intern",
+    "tag": "SAWBON • Feb 2022 - Mar 2022",
+    "intro": "Sustained sub-250ms p95 response times at 500 concurrent users with zero downtime by building concurrent Go REST APIs using goroutines, channels, and connection pooling against MongoDB.",
+    "skills": [
+      "Go",
+      "Redis",
+      "MongoDB",
+      "REST APIs",
+      "Concurrency",
+      "Remix.js"
+    ],
+    "is_featured": false,
+    "category": "experience",
+    "status": "published",
+    "order": 104,
+    "details": [
+      [
+        "text",
+        {
+          "heading": "Overview",
+          "content": "Sustained sub-250ms p95 response times at 500 concurrent users with zero downtime by building concurrent Go REST APIs using goroutines, channels, and connection pooling against MongoDB.\n        \nCut median API latency 15% and reduced DB read load 30% by implementing Redis cache-aside with TTL-based invalidation across server-rendered Remix.js components.\n        \nAchieved 78% code coverage on critical service paths via unit and integration tests using Go's testing package."
+        }
+      ]
+    ],
+    "my_contribution": "",
+    "source": "data.ts",
+    "role": "Software Development Intern",
+    "org": "SAWBON",
+    "period": "Feb 2022 - Mar 2022"
+  }
+]

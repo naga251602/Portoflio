@@ -1,0 +1,32 @@
+{
+  "github": "https://github.com/naga251602",
+  "linkedin": "https://www.linkedin.com/",
+  "resume": "resume.pdf",
+  "profiles": [
+    {
+      "name": "Codeforces",
+      "handle": "t7rx",
+      "rating": 756,
+      "solved": 81,
+      "as_of": "2026-11-10",
+      "url": "https://codeforces.com/profile/t7rx"
+    },
+    {
+      "name": "LeetCode",
+      "handle": "t7rx",
+      "rating": 1500,
+      "solved": 299,
+      "as_of": "2026-11-10",
+      "url": "https://leetcode.com/u/t7rx/"
+    },
+    {
+      "name": "AtCoder",
+      "handle": "t7rx",
+      "rating": 44,
+      "solved": 12,
+      "as_of": "2026-11-10",
+      "url": "https://atcoder.jp/users/t7rx"
+    }
+  ],
+  "google_scholar": "https://scholar.google.com/"
+}
